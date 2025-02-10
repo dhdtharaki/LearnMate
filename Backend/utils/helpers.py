@@ -175,3 +175,74 @@ def recommend_activities(age, Cognitive_Level, user_input):
         return []  # Return an empty list if no matching activities are found
 
     return selected_cog_activities
+
+
+# Affective Domain
+def suggest_ADactivities_by_age(AD_Level, age):
+    ADactivities = {
+        "Mild": {
+            "5-8": [
+                "Emotion Identification with Facial Expressions: Use flashcards with various facial expressions and have the child identify the emotion.",
+                "Role-playing Social Scenarios: Set up social situations and practice them together.",
+                "Mindfulness Activities: Teach mindfulness techniques like deep breathing, guided relaxation, or gentle stretching.",
+                "Social Stories: Create stories that describe social situations and emotional responses."
+            ],
+            "9-11": [
+                "Social Stories: Create stories that describe social situations and emotional responses.",
+                "Group Activities: Participate in board games, team sports, or collaborative art projects."
+            ],
+            "12-14": [
+                "Emotion Identification with Discussion: Use flashcards and have more in-depth discussions about emotions.",
+                "Advanced Role-playing: Include more complex social scenarios.",
+                "Team Collaboration: Engage in group projects requiring teamwork.",
+                "Social Stories: Create stories that describe social situations and emotional responses."
+            ]
+        },
+        "Moderate": {
+            "5-8": [
+                "Emotion Wheel: Use a wheel with different emotions and ask the child to talk about a time they felt that emotion.",
+                "Therapeutic Play: Engage in play that allows the child to express emotions through toys."
+            ],
+            "9-11": [
+                "Feelings Journal or Chart: Use a simple feelings chart with faces showing different emotions.",
+                "Social Skills Groups: Place the child in a small group setting with peers to practice communication."
+            ],
+            "12-14": [
+                "Guided Emotional Role-play: Use videos, role-playing, or puppet shows to demonstrate social situations.",
+                "Simple Breathing or Calming Techniques: Teach calming techniques like bunny breathing or grounding exercises."
+            ]
+        },
+        "Severe": {
+            "5-8": [
+                "Picture Exchange Communication System (PECS): Use a picture system to help the child communicate their feelings.",
+                "Sensory Activities: Use stress balls, deep pressure, swings, or textured materials to help with emotional regulation."
+            ],
+            "9-11": [
+                "Interactive Music or Sound Therapy: Play calming music or rhythmic sounds.",
+                "Story Time with Emotions: Use storybooks that focus on emotions and discuss how the characters might feel."
+            ],
+            "12-14": [
+                "Calming Zones: Create a designated calm space with soft lighting and sensory objects.",
+                "Visual Schedules: Use structured routines to help the child understand what activities to expect."
+            ]
+        }
+    }
+
+    # Determine age group
+    if 5 <= age <= 8:
+        age_group = "5-8"
+    elif 9 <= age <= 11:
+        age_group = "9-11"
+    elif 12 <= age <= 14:
+        age_group = "12-14"
+    else:
+        raise ValueError("Age not supported for these activities.")
+
+    # Display activities
+    print(f"\nRelevant Activities for {AD_Level} Level (Age {age_group}):")
+    activities = ADactivities[AD_Level][age_group]
+    for ADactivity in activities:
+        print(f"- {ADactivity}")
+    print()
+
+    return activities
