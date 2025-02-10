@@ -112,3 +112,66 @@ def recommend_activities_for_psychomotor_domain(level, age):
 
     return recommended_activities  # Return the list of recommended activities
 
+def recommend_activities(age, Cognitive_Level, user_input):
+    # Define activity recommendations based on age and cognitive level, focusing on developing cognitive skills
+    activity_recommendations = {
+        0: {  # Mild Level Activities
+            '5_to_8': [
+                "Role-playing Social Scenarios",
+                "Routine Building",
+            ],
+            '9_to_11': [
+                "Pretend to run a grocery store or library to teach social roles and cooperation",
+                "Create indoor or outdoor hunts with clues to enhance critical thinking and observation skills",
+            ],
+            '12_to_14': [
+                "Offer riddles or real-world challenges like planning a picnic",
+                "Use visual calendars to teach time management and planning",
+            ]
+        },
+        1: {  # Moderate Level Activities
+            '5_to_8': [
+                "Work together on a mural or collage",
+                "Count objects during daily activities (eg: setting the table, sorting groceries)",
+            ],
+            '9_to_11': [
+                "Play games like 'Simon Says' to practice listening and responding",
+                "Asking questions about the day",
+            ],
+            '12_to_14': [
+                "Provide puzzles of varying complexity to build problem-solving",
+                "Take turns adding to a story to foster creativity and active listening"
+
+            ]
+        },
+        2: {  # Severe Level Activities
+            '5_to_8': [
+                "Use cards with matching pairs (colors, animals, etc.) to improve memory and focus",
+                "Teach hehaviours in different social situations",
+            ],
+            '9_to_11': [
+                "Have the child sort objects by color, size, or shape to develop categorization skills",
+                "Use picture cards to sequence events in a logical order",
+            ],
+            '12_to_14': [
+                "Engage in activities that involve identifying and completing patterns (eg: bead stringing)",
+                "Activities like building with limited blocks to teach collaboration and sharing",
+            ]
+        }
+    }
+
+    # Determine the appropriate age group
+    if 5 <= age <= 8:
+        age_group = '5_to_8'
+    elif 9 <= age <= 11:
+        age_group = '9_to_11'
+    else:  # For ages 12 to 14
+        age_group = '12_to_14'
+
+    # Select the activities based on age and metacognitive level
+    if Cognitive_Level in activity_recommendations:
+        selected_cog_activities = activity_recommendations[Cognitive_Level].get(age_group, [])
+    else:
+        return []  # Return an empty list if no matching activities are found
+
+    return selected_cog_activities
