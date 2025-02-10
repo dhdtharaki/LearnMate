@@ -69,3 +69,46 @@ def recommend_activities_for_metacognitive_domain(age, Metacognitive_Level):
         return []  # Return an empty list if no matching activities are found
 
     return selected_activities
+
+def recommend_activities_for_psychomotor_domain(level, age):
+    """Suggest activities based on psychomotor level and age."""
+    
+    # Dictionary mapping psychomotor levels and age groups to recommended activities
+    activities_by_age = {
+        "Severe": {
+            "5-8": ["Threading Beads", "Drawing Shapes", "Color Sorting"],
+            "9-11": ["Building Block Towers", "Tracing Patterns", "Basic Finger Exercises"],
+            "12-14": ["Learning Basic Crafts", "Simple Hand Exercises", "Gardening Tasks"]
+        },
+        "Moderate": {
+            "5-8": ["Throwing and Catching Balls", "Buttoning Shirts", "Walking on a Line"],
+            "9-11": ["Cutting Shapes with Scissors", "Tracing Letters", "Interactive Dance Steps"],
+            "12-14": ["Learning to Type", "Organizing Small Objects", "Structured Physical Games"]
+        },
+        "Mild": {
+            "5-8": ["Hand-over-Hand Assistance Tasks", "Sensory Play with Sand or Water", "Simple Arm Movements"],
+            "9-11": ["Interactive Music Therapy", "Pushing Large Objects", "Basic Yoga Poses"],
+            "12-14": ["Basic Physical Therapy Exercises", "Guided Art Therapy", "Learning to Stack Blocks"]
+        }
+    }
+
+    # Determine the appropriate age range based on the given age
+    if 5 <= age <= 8:
+        age_range = "5-8"
+    elif 9 <= age <= 11:
+        age_range = "9-11"
+    elif 12 <= age <= 14:
+        age_range = "12-14"
+    else:
+        raise ValueError("Age out of range")  # Raise an error if age is outside the expected range
+
+    # Retrieve recommended activities for the given psychomotor level and age group
+    recommended_activities = activities_by_age[level][age_range]
+
+    # Print the recommended activities in a user-friendly format
+    print(f"\nRecommended Activities for {level} Level (Age {age_range}):")
+    for activity in recommended_activities:
+        print(f"- {activity}")
+
+    return recommended_activities  # Return the list of recommended activities
+
