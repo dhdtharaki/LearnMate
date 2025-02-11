@@ -138,11 +138,131 @@ def update_user():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/predictions', methods=['GET'])
+def get_predictions_by_email():
+    email = request.args.get('email')  # Get email from query parameters
+    if not email:
+        return jsonify({"error": "Email query parameter is required"}), 400
+
+    # Query MongoDB for predictions with the given email
+    predictions = list(db_predictions.find({"email": email}, {"_id": 0}))  # Exclude `_id` field from results
+    if not predictions:
+        return jsonify({"message": "No predictions found for the given email"}), 404
+
+    return jsonify(predictions), 200
+
+@app.route('/save-activity', methods=['POST'])
+def save_activity():
+    try:
+        # Parse JSON data from the request
+        data = request.json
+        
+        # Validate required fields
+        required_fields = ["email", "activity", "points", "retries", "timeTaken"]
+        for field in required_fields:
+            if field not in data:
+                return jsonify({"error": f"'{field}' is required"}), 400
+
+        # Prepare the filter and update document
+        filter_query = {"email": data["email"], "activity": data["activity"]}  # Match on email and activity
+        update_data = {
+            "$set": {
+                "email": data["email"],
+                "activity": data["activity"],
+                "points": data["points"],
+                "retries": data["retries"],
+                "timeTaken": data["timeTaken"],
+                "date": datetime.now().strftime("%d/%m/%Y")  # Automatically add the date
+            }
+        }
+
+        # Perform an upsert: update if the document exists, insert if it doesn't
+        result = db_activities.update_one(filter_query, update_data, upsert=True)
+        
+        # Prepare response message
+        if result.matched_count > 0:
+            message = "Activity updated successfully"
+        else:
+            message = "Activity saved successfully"
+
+        # Include the updated/inserted document
+        activity_data = {
+            "email": data["email"],
+            "activity": data["activity"],
+            "points": data["points"],
+            "retries": data["retries"],
+            "timeTaken": data["timeTaken"],
+            "date": datetime.now().strftime("%d/%m/%Y")
+        }
+
+        return jsonify({"message": message, "data": activity_data}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 
 
+@app.route('/cognitive-predict', methods=['POST'])
+def predict_cognitive_level_api():
+    try:
+        # Extract JSON data
+        data = request.get_json()
 
+        # Validate input
+        required_fields = [
+            'gender', 'age', 'family_history', 'problem_solving',
+            'visual_learning_pref', 'response_to_guidance',
+            'task_independece', 'object_identification', 'error_correction'
+        ]
+        for field in required_fields:
+            if field not in data:
+                return jsonify({"error": f"Missing required field: {field}"}), 400
+
+        # Get the input features
+        input_features = [
+            data['gender'],
+            data['age'],
+            data['family_history'],
+            data['problem_solving'],
+            data['visual_learning_pref'],
+            data['response_to_guidance'],
+            data['task_independece'],
+            data['object_identification'],
+            data['error_correction']
+        ]
+
+        # Predict cognitive level
+        model = models["model_2"]  # Use the second model
+        predicted_cognitive_level = model.predict([input_features])[0]
+
+        print(predicted_cognitive_level)
+
+        # Get recommendations
+        recommended_activities = recommend_activities_for_cognitive_domain(data['age'], predicted_cognitive_level)
+
+        # Map cognitive level to readable format
+        cognitive_mapping = {0: "Mild", 1: "Moderate", 2: "Severe"}
+        predicted_level = cognitive_mapping[predicted_cognitive_level]
+
+        predictions = {
+            "email": data.get("email"),
+            "label": predicted_level,
+            "domain": "Cognitive Domain",
+            "date": datetime.now().strftime("%d/%m/%Y"),  # Format: DD/MM/YYYY
+            "recommendation": recommended_activities
+        }
+
+        db_predictions.insert_one(predictions)
+
+        # Return the response
+        return jsonify({
+            "prediction": predicted_level,
+            "recommendation": recommended_activities
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
 
 #Predict Metacognitive level
 @app.route('/meta-cognitive-predict', methods=['POST'])
@@ -272,3 +392,8 @@ def psycomotor_level_api():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400    
+
+
+# Run the app
+if __name__ == '__main__':
+    app.run(debug=True)
