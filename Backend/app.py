@@ -206,3 +206,70 @@ def predict_metacognitive_level_api():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
+    
+
+#Predict Psychomotor level
+@app.route('/psycomotor-predict', methods=['POST'])
+def psycomotor_level_api():
+    try:
+        # Extract JSON data
+        data = request.get_json()
+
+        # Validate input
+        required_fields = [
+            "Gender", "Age", "Family_ASD_History",
+            "Balance_and_Stability", "Grip_Strength", "Coordination",
+            "Hand_Eye_Coordination", "Object_Manipulation",
+            "Independent_Use_Utensils", "Button_Zip_Clothes"
+        ]
+
+        for field in required_fields:
+            if field not in data:
+                return jsonify({"error": f"Missing required field: {field}"}), 400
+
+        # Get the input features
+        input_features = [
+            data['Gender'],
+            data['Age'],
+            data['Family_ASD_History'],
+            data['Balance_and_Stability'],
+            data['Grip_Strength'],
+            # data['response_to_guidance'],
+            data['Coordination'],
+            data['Hand_Eye_Coordination'],
+            data['Object_Manipulation'],
+            data['Independent_Use_Utensils'],
+            data['Button_Zip_Clothes']
+        ]
+
+        # Predict cognitive level
+        model = models["model_4"]  # Use the second model
+        predicted_psychomotor_level = model.predict([input_features])[0]
+
+        print(predicted_psychomotor_level)
+
+        cognitive_mapping = {0: "Mild", 1: "Moderate", 2: "Severe"}
+        predicted_level = cognitive_mapping[predicted_psychomotor_level]
+
+        # Get recommendations
+        recommended_activities = recommend_activities_for_psychomotor_domain(predicted_level, data['Age'])
+
+        # Map cognitive level to readable format
+        predictions = {
+            "email": data.get("email"),
+            "label": predicted_level,
+            "domain": "Psycho-Motor Domain",
+            "date": datetime.now().strftime("%d/%m/%Y"),  # Format: DD/MM/YYYY
+            "recommendation": recommended_activities
+        }
+
+        db_predictions.insert_one(predictions)
+
+        # Return the response
+        return jsonify({
+            "prediction": predicted_level,
+            "recommendation": recommended_activities
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400    
