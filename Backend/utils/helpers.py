@@ -1,3 +1,4 @@
+#Metacognitive Domain
 def recommend_activities_for_metacognitive_domain(age, Metacognitive_Level):
     # Define activity recommendations based on age and metacognitive level, focusing on developing metacognitive skills
     activity_recommendations = {
@@ -70,6 +71,7 @@ def recommend_activities_for_metacognitive_domain(age, Metacognitive_Level):
 
     return selected_activities
 
+#Psychomotor Domain
 def recommend_activities_for_psychomotor_domain(level, age):
     """Suggest activities based on psychomotor level and age."""
     
@@ -112,6 +114,7 @@ def recommend_activities_for_psychomotor_domain(level, age):
 
     return recommended_activities  # Return the list of recommended activities
 
+#Cognitive Domain
 def recommend_activities(age, Cognitive_Level, user_input):
     # Define activity recommendations based on age and cognitive level, focusing on developing cognitive skills
     activity_recommendations = {
