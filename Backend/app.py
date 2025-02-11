@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from model.model_loader import load_model
-from utils.helpers import recommend_activities_for_affective_domain,recommend_activities_for_cognitive_domain,recommend_activities_for_metacognitive_domain,recommend_activities_for_psycimoto_domain
+from utils.helpers import recommend_activities_for_affective_domain,recommend_activities_for_cognitive_domain,recommend_activities_for_metacognitive_domain,recommend_activities_for_psychomotor_domain
 import numpy as np
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash,check_password_hash
@@ -234,7 +234,6 @@ def psycomotor_level_api():
             data['Family_ASD_History'],
             data['Balance_and_Stability'],
             data['Grip_Strength'],
-            # data['response_to_guidance'],
             data['Coordination'],
             data['Hand_Eye_Coordination'],
             data['Object_Manipulation'],
@@ -248,8 +247,8 @@ def psycomotor_level_api():
 
         print(predicted_psychomotor_level)
 
-        cognitive_mapping = {0: "Mild", 1: "Moderate", 2: "Severe"}
-        predicted_level = cognitive_mapping[predicted_psychomotor_level]
+        psychomotor_mapping = {0: "Mild", 1: "Moderate", 2: "Severe"}
+        predicted_level = psychomotor_mapping[predicted_psychomotor_level]
 
         # Get recommendations
         recommended_activities = recommend_activities_for_psychomotor_domain(predicted_level, data['Age'])
