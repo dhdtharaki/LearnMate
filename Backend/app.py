@@ -138,6 +138,69 @@ def update_user():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/predictions', methods=['GET'])
+def get_predictions_by_email():
+    email = request.args.get('email')  # Get email from query parameters
+    if not email:
+        return jsonify({"error": "Email query parameter is required"}), 400
+
+    # Query MongoDB for predictions with the given email
+    predictions = list(db_predictions.find({"email": email}, {"_id": 0}))  # Exclude `_id` field from results
+    if not predictions:
+        return jsonify({"message": "No predictions found for the given email"}), 404
+
+    return jsonify(predictions), 200
+
+@app.route('/save-activity', methods=['POST'])
+def save_activity():
+    try:
+        # Parse JSON data from the request
+        data = request.json
+        
+        # Validate required fields
+        required_fields = ["email", "activity", "points", "retries", "timeTaken"]
+        for field in required_fields:
+            if field not in data:
+                return jsonify({"error": f"'{field}' is required"}), 400
+
+        # Prepare the filter and update document
+        filter_query = {"email": data["email"], "activity": data["activity"]}  # Match on email and activity
+        update_data = {
+            "$set": {
+                "email": data["email"],
+                "activity": data["activity"],
+                "points": data["points"],
+                "retries": data["retries"],
+                "timeTaken": data["timeTaken"],
+                "date": datetime.now().strftime("%d/%m/%Y")  # Automatically add the date
+            }
+        }
+
+        # Perform an upsert: update if the document exists, insert if it doesn't
+        result = db_activities.update_one(filter_query, update_data, upsert=True)
+        
+        # Prepare response message
+        if result.matched_count > 0:
+            message = "Activity updated successfully"
+        else:
+            message = "Activity saved successfully"
+
+        # Include the updated/inserted document
+        activity_data = {
+            "email": data["email"],
+            "activity": data["activity"],
+            "points": data["points"],
+            "retries": data["retries"],
+            "timeTaken": data["timeTaken"],
+            "date": datetime.now().strftime("%d/%m/%Y")
+        }
+
+        return jsonify({"message": message, "data": activity_data}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 
 
 
