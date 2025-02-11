@@ -392,3 +392,8 @@ def psycomotor_level_api():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400    
+
+
+# Run the app
+if __name__ == '__main__':
+    app.run(debug=True)
