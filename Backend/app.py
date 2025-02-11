@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from model.model_loader import load_model
-from utils.helpers import recommend_activities_for_affective_domain,recommend_activities_for_cognitive_domain,recommend_activities_for_metacognitive_domain,recommend_activities_for_psycimoto_domain
+from utils.helpers import recommend_activities_for_affective_domain,recommend_activities_for_cognitive_domain,recommend_activities_for_metacognitive_domain,recommend_activities_for_psychomotor_domain
 import numpy as np
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash,check_password_hash
@@ -69,7 +69,74 @@ def register_user():
         return jsonify({"error": str(e)}), 500
 
 
+@app.route('/login', methods=['POST'])
+def login_user():
+    try:
+        # Get data from the frontend
+        login_data = request.json
 
+        # Validate required fields
+        required_fields = ['email', 'password']
+        for field in required_fields:
+            if field not in login_data:
+                return jsonify({"error": f"'{field}' is required."}), 400
+
+        # Find the user by email
+        user = db.find_one({"email": login_data['email']})
+        if not user:
+            return jsonify({"error": "Invalid email or password."}), 401
+
+        # Verify the password
+        if not check_password_hash(user['password'], login_data['password']):
+            return jsonify({"error": "Invalid email or password."}), 401
+
+        user_data = {
+            "age": user['age'],
+            "asdFamilyMember": user['asdFamilyMember'],
+            "email": user['email'],
+            "gender": user['gender'],
+            "name": user['name']
+        }
+
+        return jsonify({"message": "Login successful.", "user": user_data}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/update', methods=['PUT'])
+def update_user():
+    try:
+        # Get data from the frontend
+        user_data = request.json
+
+        # Validate the presence of email
+        if 'email' not in user_data:
+            return jsonify({"error": "'email' is required to identify the user."}), 400
+
+        # Find the user in the database by email
+        user = db.find_one({"email": user_data['email']})
+        if not user:
+            return jsonify({"error": "User not found."}), 404
+
+        # Fields that are allowed to be updated
+        updatable_fields = ['age', 'asdFamilyMember', 'gender', 'name']
+
+        # Prepare update data while ignoring password
+        update_data = {}
+        for field in updatable_fields:
+            if field in user_data:
+                update_data[field] = user_data[field]
+
+        # If no updatable fields are provided
+        if not update_data:
+            return jsonify({"error": "No valid fields provided for update."}), 400
+
+        # Update the user document in the database
+        db.update_one({"email": user_data['email']}, {"$set": update_data})
+
+        return jsonify({"message": "User updated successfully."}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 
@@ -139,3 +206,69 @@ def predict_metacognitive_level_api():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
+    
+
+#Predict Psychomotor level
+@app.route('/psycomotor-predict', methods=['POST'])
+def psycomotor_level_api():
+    try:
+        # Extract JSON data
+        data = request.get_json()
+
+        # Validate input
+        required_fields = [
+            "Gender", "Age", "Family_ASD_History",
+            "Balance_and_Stability", "Grip_Strength", "Coordination",
+            "Hand_Eye_Coordination", "Object_Manipulation",
+            "Independent_Use_Utensils", "Button_Zip_Clothes"
+        ]
+
+        for field in required_fields:
+            if field not in data:
+                return jsonify({"error": f"Missing required field: {field}"}), 400
+
+        # Get the input features
+        input_features = [
+            data['Gender'],
+            data['Age'],
+            data['Family_ASD_History'],
+            data['Balance_and_Stability'],
+            data['Grip_Strength'],
+            data['Coordination'],
+            data['Hand_Eye_Coordination'],
+            data['Object_Manipulation'],
+            data['Independent_Use_Utensils'],
+            data['Button_Zip_Clothes']
+        ]
+
+        # Predict cognitive level
+        model = models["model_4"]  # Use the second model
+        predicted_psychomotor_level = model.predict([input_features])[0]
+
+        print(predicted_psychomotor_level)
+
+        psychomotor_mapping = {0: "Mild", 1: "Moderate", 2: "Severe"}
+        predicted_level = psychomotor_mapping[predicted_psychomotor_level]
+
+        # Get recommendations
+        recommended_activities = recommend_activities_for_psychomotor_domain(predicted_level, data['Age'])
+
+        # Map cognitive level to readable format
+        predictions = {
+            "email": data.get("email"),
+            "label": predicted_level,
+            "domain": "Psycho-Motor Domain",
+            "date": datetime.now().strftime("%d/%m/%Y"),  # Format: DD/MM/YYYY
+            "recommendation": recommended_activities
+        }
+
+        db_predictions.insert_one(predictions)
+
+        # Return the response
+        return jsonify({
+            "prediction": predicted_level,
+            "recommendation": recommended_activities
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400    
