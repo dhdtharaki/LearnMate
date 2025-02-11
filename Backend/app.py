@@ -203,9 +203,66 @@ def save_activity():
 
 
 
+@app.route('/cognitive-predict', methods=['POST'])
+def predict_cognitive_level_api():
+    try:
+        # Extract JSON data
+        data = request.get_json()
 
+        # Validate input
+        required_fields = [
+            'gender', 'age', 'family_history', 'problem_solving',
+            'visual_learning_pref', 'response_to_guidance',
+            'task_independece', 'object_identification', 'error_correction'
+        ]
+        for field in required_fields:
+            if field not in data:
+                return jsonify({"error": f"Missing required field: {field}"}), 400
 
+        # Get the input features
+        input_features = [
+            data['gender'],
+            data['age'],
+            data['family_history'],
+            data['problem_solving'],
+            data['visual_learning_pref'],
+            data['response_to_guidance'],
+            data['task_independece'],
+            data['object_identification'],
+            data['error_correction']
+        ]
 
+        # Predict cognitive level
+        model = models["model_2"]  # Use the second model
+        predicted_cognitive_level = model.predict([input_features])[0]
+
+        print(predicted_cognitive_level)
+
+        # Get recommendations
+        recommended_activities = recommend_activities_for_cognitive_domain(data['age'], predicted_cognitive_level)
+
+        # Map cognitive level to readable format
+        cognitive_mapping = {0: "Mild", 1: "Moderate", 2: "Severe"}
+        predicted_level = cognitive_mapping[predicted_cognitive_level]
+
+        predictions = {
+            "email": data.get("email"),
+            "label": predicted_level,
+            "domain": "Cognitive Domain",
+            "date": datetime.now().strftime("%d/%m/%Y"),  # Format: DD/MM/YYYY
+            "recommendation": recommended_activities
+        }
+
+        db_predictions.insert_one(predictions)
+
+        # Return the response
+        return jsonify({
+            "prediction": predicted_level,
+            "recommendation": recommended_activities
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
 
 #Predict Metacognitive level
 @app.route('/meta-cognitive-predict', methods=['POST'])
