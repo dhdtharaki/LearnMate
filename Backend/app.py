@@ -69,7 +69,74 @@ def register_user():
         return jsonify({"error": str(e)}), 500
 
 
+@app.route('/login', methods=['POST'])
+def login_user():
+    try:
+        # Get data from the frontend
+        login_data = request.json
 
+        # Validate required fields
+        required_fields = ['email', 'password']
+        for field in required_fields:
+            if field not in login_data:
+                return jsonify({"error": f"'{field}' is required."}), 400
+
+        # Find the user by email
+        user = db.find_one({"email": login_data['email']})
+        if not user:
+            return jsonify({"error": "Invalid email or password."}), 401
+
+        # Verify the password
+        if not check_password_hash(user['password'], login_data['password']):
+            return jsonify({"error": "Invalid email or password."}), 401
+
+        user_data = {
+            "age": user['age'],
+            "asdFamilyMember": user['asdFamilyMember'],
+            "email": user['email'],
+            "gender": user['gender'],
+            "name": user['name']
+        }
+
+        return jsonify({"message": "Login successful.", "user": user_data}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/update', methods=['PUT'])
+def update_user():
+    try:
+        # Get data from the frontend
+        user_data = request.json
+
+        # Validate the presence of email
+        if 'email' not in user_data:
+            return jsonify({"error": "'email' is required to identify the user."}), 400
+
+        # Find the user in the database by email
+        user = db.find_one({"email": user_data['email']})
+        if not user:
+            return jsonify({"error": "User not found."}), 404
+
+        # Fields that are allowed to be updated
+        updatable_fields = ['age', 'asdFamilyMember', 'gender', 'name']
+
+        # Prepare update data while ignoring password
+        update_data = {}
+        for field in updatable_fields:
+            if field in user_data:
+                update_data[field] = user_data[field]
+
+        # If no updatable fields are provided
+        if not update_data:
+            return jsonify({"error": "No valid fields provided for update."}), 400
+
+        # Update the user document in the database
+        db.update_one({"email": user_data['email']}, {"$set": update_data})
+
+        return jsonify({"message": "User updated successfully."}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 
