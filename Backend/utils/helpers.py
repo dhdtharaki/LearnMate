@@ -115,7 +115,7 @@ def recommend_activities_for_psychomotor_domain(level, age):
     return recommended_activities  # Return the list of recommended activities
 
 #Cognitive Domain
-def recommend_activities(age, Cognitive_Level, user_input):
+def recommend_activities_for_cognitive_domain(age, Cognitive_Level, user_input):
     # Define activity recommendations based on age and cognitive level, focusing on developing cognitive skills
     activity_recommendations = {
         0: {  # Mild Level Activities
@@ -181,7 +181,7 @@ def recommend_activities(age, Cognitive_Level, user_input):
 
 
 # Affective Domain
-def suggest_ADactivities_by_age(AD_Level, age):
+def recommend_activities_for_affective_domain(AD_Level, age):
     ADactivities = {
         "Mild": {
             "5-8": [
