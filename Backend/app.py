@@ -224,6 +224,26 @@ def get_activities_by_email():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@app.route('/get_predictions', methods=['GET'])
+def get_predictions():
+    email = request.args.get("email")
+    if not email:
+        return jsonify({"error": "Email is required"}), 400
+
+    # Define the domains
+    domains = ["Psycho-Motor Domain", "Meta-Cognitive Domain", "Cognitive Domain", "Affective Domain"]
+
+    # Query to fetch the latest data for each domain
+    results = []
+    for domain in domains:
+        latest_prediction = db_predictions.find({"email": email, "domain": domain}).sort("date", -1).limit(1)
+        for prediction in latest_prediction:
+            # Convert ObjectId to string
+            prediction["_id"] = str(prediction["_id"])
+            results.append(prediction)
+
+    return jsonify(results), 200
     
 @app.route('/cognitive-predict', methods=['POST'])
 def predict_cognitive_level_api():
