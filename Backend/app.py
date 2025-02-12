@@ -414,7 +414,6 @@ def predict_metacognitive_level_api():
             data['Family_History'],
             data['Concentration'],
             data['Individual_Tasks_Planning'],
-            # data['response_to_guidance'],
             data['Remember_Steps'],
             data['Finish_Chores_Properly'],
             data['Identify_Goals'],
