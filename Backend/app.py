@@ -202,7 +202,29 @@ def save_activity():
 
 
 
+@app.route('/get-activities', methods=['GET'])
+def get_activities_by_email():
+    try:
+        # Get email from query parameters
+        email = request.args.get('email')
+        if not email:
+            return jsonify({"error": "Email query parameter is required"}), 400
 
+        # Query the database for all activities with the given email
+        activities = list(db_activities.find({"email": email}))
+        
+        # Convert ObjectId to string for JSON serialization
+        for activity in activities:
+            activity["_id"] = str(activity["_id"])
+
+        # if not activities:
+        #     return jsonify({"message": "No activities found for the given email"}), 404
+
+        return jsonify({"message": "Activities retrieved successfully", "data": activities}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
 @app.route('/cognitive-predict', methods=['POST'])
 def predict_cognitive_level_api():
     try:
