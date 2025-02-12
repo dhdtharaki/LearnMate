@@ -264,6 +264,70 @@ def get_predictions_for_chart():
             results.append(prediction)
 
     return jsonify(results), 200
+
+
+
+
+
+
+@app.route('/affective-predict', methods=['POST'])
+def affectvePredict():
+    try:
+        
+        # Extract JSON data
+        data = request.get_json()
+
+        # Parse input features
+        features = [
+            data.get('Gender'),
+            data.get('Age'),
+            data.get('Family Member w/ Autism'),
+            data.get('Gets along with other children'),
+            data.get('Make eye contact'),
+            data.get('Express Feelings'),
+            data.get('Show Empathy'),
+            data.get('Feels happy/angry with reason'),
+            data.get('Stays Calm'),
+            data.get('Smiles not less sociably')
+        ]
+
+        # Convert features to numpy array and reshape for the model
+        features_array = np.array(features).reshape(1, -1).astype(float)
+
+        # Predict using the specified model
+        model = models['model_1']
+        prediction = model.predict(features_array)
+
+        # Map prediction to readable level (adjust for specific model if needed)
+        engagement_mapping = {2: "Severe", 1: "Moderate", 0: "Mild"}
+        predicted_level = engagement_mapping[int(prediction[0])]
+
+        # Fetch age for recommendation
+        age = data.get('Age')
+        if age is None or not (5 <= int(age) <= 14):
+            return jsonify({"error": "Age must be between 5 and 14 for recommendations."})
+
+        # Get recommendations
+        recommendations = recommend_activities_for_affective_domain(predicted_level, int(age))
+
+        predictions = {
+            "email": data.get("email"),
+            "label": predicted_level,
+            "domain": "Affective Domain",
+            "date": datetime.now().strftime("%d/%m/%Y"),  # Format: DD/MM/YYYY
+            "recommendation": recommendations
+        }
+
+        db_predictions.insert_one(predictions)
+        # Return the result with recommendations
+        return jsonify({
+            "prediction": predicted_level,
+            "recommendation": recommendations
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+    
     
 @app.route('/cognitive-predict', methods=['POST'])
 def predict_cognitive_level_api():
