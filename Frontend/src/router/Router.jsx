@@ -1,4 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 // import Requirements from "../pages/Content/Requirement";
 import { AuthGuard, ProtectedRoute } from "../guards/Authguard";
@@ -14,7 +16,23 @@ const router = createBrowserRouter([
             <Landing />
           </AuthGuard>
         ),
-      },
+    },
+    {
+        path: "/login",
+        element: (
+          <AuthGuard>
+            <Login />
+          </AuthGuard>
+        ),
+    },
+    {
+        path: "/register",
+        element: (
+          <AuthGuard>
+            <Register />
+          </AuthGuard>
+        ),
+    },
 
 ]);
 
