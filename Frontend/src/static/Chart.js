@@ -20,3 +20,29 @@ ChartJS.register(
     Tooltip,
     Legend
 );
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+
+const LineChart = ({ totalPercentage }) => {
+    console.log(totalPercentage, "totalPercentage")
+    const data = {
+        labels: ["Affective", "Cognitive", "Meta-Cognitive", "Psycomoto"],
+        datasets: [
+            {
+                label: "Domain Percentages",
+                data: [
+                    totalPercentage.affective_domain,
+                    totalPercentage.cognitive_domain,
+                    totalPercentage.meta_cognitive_domain,
+                    totalPercentage.psycomoto_domain,
+                ],
+                borderColor: "rgba(75, 192, 192, 1)",
+                backgroundColor: "rgba(75, 192, 192, 0.2)",
+                pointBackgroundColor: "rgba(75, 192, 192, 1)",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "rgba(75, 192, 192, 1)",
+                tension: 0.3, // Smooth curve
+            },
+        ],
+    };
