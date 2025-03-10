@@ -3,11 +3,18 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Landing from "../pages/LandingPage";
 import Home from "../pages/Home";
+import Answers from "../pages/domains/Answers";
 
 import CognitiveQuestions from "../pages/domains/CognitiveQuestions";
 import AffectiveQuestion from "../pages/domains/AffectiveQuestions";
 import MetaCognitiveDomain from "../pages/domains/MetaCognitiveDomain";
 import PsycomotorQuestions from "../pages/domains/PsycomotorQuestions";
+
+import PredictionHistory from "../pages/PredictionHistory";
+import Settings from "../pages/Settings";
+import Recommandations from "../pages/Recommandations";
+import Charts from "../pages/Chart";
+
 
 // import Requirements from "../pages/Content/Requirement";
 import { AuthGuard, ProtectedRoute } from "../guards/Authguard";
@@ -85,6 +92,23 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <PsycomotorQuestions />
+          </ProtectedRoute>
+        ),
+    },
+    {
+        path: "/answers",
+        element: (
+          <ProtectedRoute>
+            <Answers />
+          </ProtectedRoute>
+        ),
+    },
+
+    {
+        path: "/settings",
+        element: (
+          <ProtectedRoute>
+            <Settings />
           </ProtectedRoute>
         ),
     },
