@@ -46,3 +46,38 @@ const LineChart = ({ totalPercentage }) => {
             },
         ],
     };
+    
+   const options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true,
+                position: "top",
+            },
+            title: {
+                display: true,
+                text: "Domain Performance Line Chart",
+            },
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 100,
+                title: {
+                    display: true,
+                    text: "Percentage",
+                },
+            },
+            x: {
+                title: {
+                    display: true,
+                    text: "Domains",
+                },
+            },
+        },
+    };
+
+    return <Line data={data} options={options} />;
+};
+
+export default LineChart;
