@@ -105,6 +105,24 @@ const router = createBrowserRouter([
     },
 
     {
+        path: "/history",
+        element: (
+          <ProtectedRoute>
+            <PredictionHistory />
+          </ProtectedRoute>
+        ),
+    },
+    
+    {
+        path: "/history/recommandations",
+        element: (
+          <ProtectedRoute>
+            <Recommandations />
+          </ProtectedRoute>
+        ),
+    },
+
+    {
         path: "/settings",
         element: (
           <ProtectedRoute>
@@ -112,6 +130,16 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
     },
+
+    {
+        path: "/chart",
+        element: (
+          <ProtectedRoute>
+            <Charts />
+          </ProtectedRoute>
+        ),
+    },
+
 
 ]);
 
