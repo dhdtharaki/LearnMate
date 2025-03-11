@@ -30,6 +30,22 @@ const activities = [
     { name: "Practice task prioritization with simple guidance like a checklist or reminder", timeTake: 25, retries: 3 },
     { name: "Work on task prioritization without external help by using visual aids and reminders", timeTake: 32, retries: 3 },
     { name: "Role-playing Social Scenarios", timeTake: 10, retries: 1 },
+    { name: "Pretend to run a grocery store or library to teach social roles and cooperation", timeTake: 21, retries: 2 },
+    { name: "Create indoor or outdoor hunts with clues to enhance critical thinking and observation skills", timeTake: 30, retries: 2 },
+    { name: "Offer riddles or real-world challenges like planning a picnic", timeTake: 24, retries: 2 },
+    { name: "Use visual calendars to teach time management and planning", timeTake: 19, retries: 1 },
+    { name: "Work together on a mural or collage", timeTake: 27, retries: 2 },
+    { name: "Count objects during daily activities (e.g., setting the table, sorting groceries)", timeTake: 14, retries: 1 },
+    { name: "Play games like Simon Says to practice listening and responding", timeTake: 20, retries: 1 },
+    { name: "Asking questions about the day", timeTake: 17, retries: 1 },
+    { name: "Provide puzzles of varying complexity to build problem-solving", timeTake: 32, retries: 2 },
+    { name: "Take turns adding to a story to foster creativity and active listening", timeTake: 24, retries: 1 },
+    { name: "Use cards with matching pairs (colors, animals, etc.) to improve memory and focus", timeTake: 14, retries: 1 },
+    { name: "Teach behaviors in different social situations", timeTake: 19, retries: 2 },
+    { name: "Have the child sort objects by color, size, or shape to develop categorization skills", timeTake: 22, retries: 2 },
+    { name: "Use picture cards to sequence events in a logical order", timeTake: 28, retries: 2 },
+    { name: "Engage in activities that involve identifying and completing patterns (eg: bead stringing)", timeTake: 31, retries: 2 },
+    { name: "Activities like building with limited blocks to teach collaboration and sharing", timeTake: 35, retries: 2 },
 ];
 
 function findActivityByName(name) {
