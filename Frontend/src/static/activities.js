@@ -69,6 +69,20 @@ const activities = [
     { name: "Simple Arm Movements", timeTake: 10, retries: 0 },
     { name: "Interactive Music Therapy", timeTake: 20, retries: 1 },
     { name: "Pushing Large Objects", timeTake: 8, retries: 1 },
+    { name: "Basic Yoga Poses", timeTake: 12, retries: 2 },
+    { name: "Basic Physical Therapy Exercises", timeTake: 18, retries: 2 },
+    { name: "Guided Art Therapy", timeTake: 30, retries: 2 },
+    { name: "Learning to Stack Blocks", timeTake: 15, retries: 3 },
+    { name: "Emotion Identification with Facial Expressions", timeTake: 7, retries: 1 },
+    { name: "Emotion Identification with Discussion: Use flashcards and have more in-depth discussions about emotions", timeTake: 18, retries: 2 },
+    { name: "Mindfulness activities of teach deep breathing", timeTake: 7, retries: 1 },
+    { name: "Teach simple breathing techniques", timeTake: 7, retries: 2 },
+    { name: "Social Skills Groups", timeTake: 25, retries: 2 },
+    { name: "Emotion Wheel", timeTake: 12, retries: 2 },
+    { name: "Sensory Activities", timeTake: 18, retries: 3 },
+    { name: "Story Time with Emotions", timeTake: 20, retries: 2 },
+    { name: "The child can understand what response activities to expect in different emotional situations", timeTake: 25, retries: 3 },
+    { name: "Team Collaboration: Engage in group projects requiring teamwork", timeTake: 35, retries: 2 }
 ];
 
 function findActivityByName(name) {
