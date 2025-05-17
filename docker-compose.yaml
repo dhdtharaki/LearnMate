@@ -3,7 +3,7 @@ version: "3.8"
 services:   
   frontend:
     build:
-      context: ./FE
+      context: ./frontend
     container_name: frontend-container
     restart: always
     environment:
@@ -12,7 +12,7 @@ services:
       - "5173:5173"
   backend:
     build:
-      context: ./BE
+      context: ./backend
     container_name: backend-container
     restart: always
     environment:
