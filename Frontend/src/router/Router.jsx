@@ -23,122 +23,122 @@ import { Chart } from "chart.js";
 
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: (
-          <AuthGuard>
-            <Landing />
-          </AuthGuard>
-        ),
-    },
-    {
-        path: "/login",
-        element: (
-          <AuthGuard>
-            <Login />
-          </AuthGuard>
-        ),
-    },
-    {
-        path: "/register",
-        element: (
-          <AuthGuard>
-            <Register />
-          </AuthGuard>
-        ),
-    },
-    {
-        path: "/home",
-        element: (
-          <ProtectedRoute>
-            <Home />
-          </ProtectedRoute>
-        ),
-    },
-    {
-        path: "/dashboard",
-        element: (
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        ),
-    },
-    {
-        path: "/cognitive-questions",
-        element: (
-          <ProtectedRoute>
-            <CognitiveQuestions />
-          </ProtectedRoute>
-        ),
-    },
-    {
-        path: "/affective-questions",
-        element: (
-          <ProtectedRoute>
-            <AffectiveQuestion />
-          </ProtectedRoute>
-        ),
-    },
-    {
-        path: "/meta-cognitive-questions",
-        element: (
-          <ProtectedRoute>
-            <MetaCognitiveDomain />
-          </ProtectedRoute>
-        ),
-    },
-    {
-        path: "/psycomotor-questions",
-        element: (
-          <ProtectedRoute>
-            <PsycomotorQuestions />
-          </ProtectedRoute>
-        ),
-    },
-    {
-        path: "/answers",
-        element: (
-          <ProtectedRoute>
-            <Answers />
-          </ProtectedRoute>
-        ),
-    },
+  {
+    path: "/",
+    element: (
+      <AuthGuard>
+        <Landing />
+      </AuthGuard>
+    ),
+  },
+  {
+    path: "/login",
+    element: (
+      <AuthGuard>
+        <Login />
+      </AuthGuard>
+    ),
+  },
+  {
+    path: "/register",
+    element: (
+      <AuthGuard>
+        <Register />
+      </AuthGuard>
+    ),
+  },
+  {
+    path: "/home",
+    element: (
+      <ProtectedRoute>
+        <Home />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/cognitive-questions",
+    element: (
+      <ProtectedRoute>
+        <CognitiveQuestions />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/affective-questions",
+    element: (
+      <ProtectedRoute>
+        <AffectiveQuestion />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/meta-cognitive-questions",
+    element: (
+      <ProtectedRoute>
+        <MetaCognitiveDomain />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/psycomotor-questions",
+    element: (
+      <ProtectedRoute>
+        <PsycomotorQuestions />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/answers",
+    element: (
+      <ProtectedRoute>
+        <Answers />
+      </ProtectedRoute>
+    ),
+  },
 
-    {
-        path: "/history",
-        element: (
-          <ProtectedRoute>
-            <PredictionHistory />
-          </ProtectedRoute>
-        ),
-    },
-    
-    {
-        path: "/history/recommandations",
-        element: (
-          <ProtectedRoute>
-            <Recommandations />
-          </ProtectedRoute>
-        ),
-    },
+  {
+    path: "/history",
+    element: (
+      <ProtectedRoute>
+        <PredictionHistory />
+      </ProtectedRoute>
+    ),
+  },
 
-    {
-        path: "/settings",
-        element: (
-          <ProtectedRoute>
-            <Settings />
-          </ProtectedRoute>
-        ),
-    },
+  {
+    path: "/history/recommandations",
+    element: (
+      <ProtectedRoute>
+        <Recommandations />
+      </ProtectedRoute>
+    ),
+  },
 
-    {
-        path: "/chart",
-        element: (
-          <ProtectedRoute>
-            <Charts />
-          </ProtectedRoute>
-        ),
-    },
+  {
+    path: "/settings",
+    element: (
+      <ProtectedRoute>
+        <Settings />
+      </ProtectedRoute>
+    ),
+  },
+
+  {
+    path: "/chart",
+    element: (
+      <ProtectedRoute>
+        <Charts />
+      </ProtectedRoute>
+    ),
+  },
 
 
 ]);

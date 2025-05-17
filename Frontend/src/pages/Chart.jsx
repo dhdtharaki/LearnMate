@@ -69,8 +69,8 @@ const LineChart = () => {
             return 0;
         }
 
-        const timeRatio = 1-((typicalChild.timeTake - row.timeTaken) / (typicalChild.timeTake + row.timeTaken));
-        const retryRatio = 1 - ((typicalChild.retries - row.retries) / (typicalChild.retries + row.retries + 1));
+        const timeRatio = 1-((row.timeTaken - typicalChild.timeTake) / (typicalChild.timeTake + row.timeTaken));
+        const retryRatio = 1 - ((row.retries - typicalChild.retries) / (typicalChild.retries + row.retries + 1));
         const pointsRatio = row.points / 10;
         return ((timeRatio * retryRatio * pointsRatio) * 100).toFixed(2);
     };

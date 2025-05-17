@@ -1,0 +1,408 @@
+Gender,Age,Family_ASD_History,Balance_and_Stability,Grip_Strength,Coordination,Hand_Eye_Coordination,Object_Manipulation,Independent_Use_Utensils,Button_Zip_Clothes,Psychomotor_Level
+Female,8,No,Rarely,Maybe,Often,Rarely,Often,Maybe,Never Have,Moderate
+Female,14,Yes,Always,Often,Rarely,Maybe,Maybe,Maybe,Never Have,Moderate
+Female,10,No,Often,Maybe,Never Have,Rarely,Never Have,Never Have,Maybe,Severe
+Male,14,No,Always,Never Have,Maybe,Often,Maybe,Often,Never Have,Moderate
+Male,12,No,Always,Never Have,Rarely,Never Have,Rarely,Never Have,Never Have,Severe
+Male,14,Yes,Maybe,Never Have,Often,Maybe,Often,Maybe,Rarely,Moderate
+Male,13,No,Always,Rarely,Often,Often,Always,Maybe,Often,Mild
+Male,12,Yes,Never Have,Maybe,Often,Never Have,Rarely,Maybe,Always,Moderate
+Male,7,Yes,Often,Often,Often,Often,Maybe,Often,Always,Mild
+Female,12,No,Always,Rarely,Always,Rarely,Never Have,Maybe,Often,Moderate
+Male,6,Yes,Rarely,Always,Rarely,Never Have,Maybe,Rarely,Often,Moderate
+Male,6,No,Always,Rarely,Maybe,Never Have,Rarely,Rarely,Rarely,Moderate
+Female,13,Yes,Maybe,Rarely,Always,Rarely,Rarely,Never Have,Often,Moderate
+Male,8,Yes,Always,Often,Often,Rarely,Always,Often,Often,Mild
+Female,13,Yes,Rarely,Often,Often,Never Have,Never Have,Rarely,Often,Moderate
+Male,12,No,Always,Rarely,Maybe,Always,Maybe,Always,Maybe,Mild
+Male,13,Yes,Always,Often,Never Have,Rarely,Never Have,Often,Rarely,Moderate
+Female,13,No,Often,Never Have,Often,Rarely,Often,Always,Often,Moderate
+Male,8,No,Always,Never Have,Never Have,Maybe,Never Have,Never Have,Maybe,Severe
+Female,12,No,Often,Always,Rarely,Rarely,Always,Always,Rarely,Moderate
+Female,8,No,Never Have,Never Have,Always,Rarely,Always,Rarely,Rarely,Moderate
+Female,5,No,Always,Never Have,Never Have,Rarely,Often,Often,Maybe,Moderate
+Male,13,No,Rarely,Rarely,Maybe,Often,Rarely,Never Have,Rarely,Severe
+Male,5,No,Always,Never Have,Never Have,Maybe,Maybe,Often,Maybe,Moderate
+Male,13,Yes,Always,Rarely,Never Have,Rarely,Often,Maybe,Often,Moderate
+Male,8,No,Maybe,Never Have,Maybe,Rarely,Often,Often,Always,Moderate
+Male,8,No,Maybe,Maybe,Never Have,Rarely,Maybe,Always,Maybe,Moderate
+Female,9,Yes,Rarely,Often,Never Have,Maybe,Often,Maybe,Never Have,Moderate
+Male,13,No,Never Have,Maybe,Never Have,Often,Often,Never Have,Always,Moderate
+Male,13,No,Always,Never Have,Always,Never Have,Rarely,Rarely,Never Have,Moderate
+Male,14,Yes,Often,Often,Always,Maybe,Never Have,Maybe,Always,Moderate
+Female,7,No,Always,Often,Never Have,Always,Never Have,Maybe,Rarely,Moderate
+Female,7,Yes,Rarely,Often,Always,Never Have,Maybe,Never Have,Always,Moderate
+Male,14,Yes,Never Have,Rarely,Never Have,Never Have,Never Have,Always,Rarely,Severe
+Male,9,Yes,Maybe,Maybe,Maybe,Rarely,Maybe,Often,Often,Moderate
+Male,5,No,Maybe,Often,Never Have,Rarely,Never Have,Maybe,Maybe,Moderate
+Male,10,Yes,Rarely,Never Have,Rarely,Maybe,Always,Often,Maybe,Moderate
+Female,11,No,Maybe,Always,Rarely,Rarely,Often,Often,Never Have,Moderate
+Female,14,No,Maybe,Never Have,Maybe,Rarely,Maybe,Often,Never Have,Moderate
+Female,9,Yes,Maybe,Maybe,Often,Never Have,Never Have,Always,Never Have,Moderate
+Female,12,Yes,Always,Often,Rarely,Maybe,Rarely,Maybe,Rarely,Moderate
+Female,7,No,Never Have,Maybe,Always,Never Have,Never Have,Rarely,Rarely,Severe
+Male,7,Yes,Never Have,Maybe,Maybe,Rarely,Often,Often,Often,Moderate
+Female,14,Yes,Never Have,Maybe,Always,Always,Rarely,Maybe,Never Have,Moderate
+Male,9,No,Never Have,Maybe,Rarely,Always,Never Have,Rarely,Maybe,Moderate
+Male,11,No,Always,Never Have,Rarely,Never Have,Rarely,Never Have,Maybe,Severe
+Female,8,No,Often,Often,Rarely,Often,Maybe,Maybe,Never Have,Moderate
+Female,11,No,Rarely,Rarely,Never Have,Always,Maybe,Always,Rarely,Moderate
+Female,11,No,Maybe,Often,Never Have,Never Have,Rarely,Never Have,Often,Severe
+Male,12,No,Always,Rarely,Always,Often,Never Have,Maybe,Never Have,Moderate
+Male,10,No,Rarely,Rarely,Rarely,Always,Maybe,Rarely,Rarely,Moderate
+Male,9,No,Often,Rarely,Maybe,Often,Never Have,Never Have,Maybe,Moderate
+Female,7,No,Never Have,Always,Maybe,Always,Often,Maybe,Always,Mild
+Male,5,No,Rarely,Always,Often,Maybe,Often,Maybe,Maybe,Moderate
+Male,9,No,Never Have,Never Have,Often,Often,Often,Often,Rarely,Moderate
+Female,8,No,Always,Maybe,Often,Always,Rarely,Often,Maybe,Mild
+Male,9,No,Always,Rarely,Always,Maybe,Often,Never Have,Always,Moderate
+Female,6,No,Never Have,Maybe,Maybe,Often,Often,Rarely,Rarely,Moderate
+Male,12,No,Always,Often,Never Have,Rarely,Maybe,Never Have,Maybe,Moderate
+Female,11,No,Rarely,Never Have,Never Have,Always,Rarely,Always,Never Have,Moderate
+Male,9,Yes,Always,Maybe,Always,Maybe,Often,Rarely,Rarely,Moderate
+Male,8,Yes,Often,Never Have,Never Have,Always,Rarely,Never Have,Often,Moderate
+Female,11,No,Often,Maybe,Maybe,Always,Always,Never Have,Always,Mild
+Female,8,No,Rarely,Always,Rarely,Maybe,Maybe,Never Have,Maybe,Moderate
+Male,13,No,Rarely,Maybe,Often,Rarely,Always,Always,Maybe,Moderate
+Female,9,No,Always,Always,Maybe,Rarely,Maybe,Often,Never Have,Moderate
+Male,9,No,Never Have,Maybe,Rarely,Rarely,Rarely,Rarely,Rarely,Severe
+Male,13,No,Maybe,Always,Never Have,Often,Never Have,Often,Rarely,Moderate
+Female,12,No,Never Have,Never Have,Always,Often,Often,Rarely,Always,Moderate
+Female,6,No,Maybe,Never Have,Often,Often,Always,Rarely,Never Have,Moderate
+Male,8,No,Always,Often,Often,Never Have,Never Have,Never Have,Rarely,Moderate
+Female,6,No,Maybe,Maybe,Often,Rarely,Always,Maybe,Maybe,Moderate
+Male,14,Yes,Often,Always,Rarely,Often,Rarely,Never Have,Never Have,Moderate
+Male,12,No,Always,Always,Often,Maybe,Often,Maybe,Never Have,Moderate
+Male,9,No,Never Have,Always,Never Have,Maybe,Always,Always,Maybe,Moderate
+Male,12,Yes,Often,Rarely,Always,Rarely,Never Have,Maybe,Rarely,Moderate
+Male,8,Yes,Maybe,Always,Often,Rarely,Always,Never Have,Often,Moderate
+Male,14,No,Often,Always,Maybe,Maybe,Rarely,Often,Always,Mild
+Female,13,No,Always,Never Have,Rarely,Always,Never Have,Never Have,Often,Moderate
+Male,7,No,Rarely,Rarely,Often,Always,Often,Maybe,Always,Moderate
+Female,12,No,Always,Maybe,Always,Never Have,Never Have,Rarely,Often,Moderate
+Male,10,No,Always,Maybe,Always,Often,Often,Rarely,Always,Mild
+Male,13,No,Always,Maybe,Rarely,Never Have,Never Have,Often,Often,Moderate
+Female,7,Yes,Never Have,Never Have,Never Have,Never Have,Never Have,Always,Rarely,Severe
+Male,13,No,Never Have,Often,Often,Always,Maybe,Never Have,Always,Moderate
+Male,10,No,Often,Never Have,Always,Never Have,Often,Rarely,Often,Moderate
+Male,11,No,Often,Always,Often,Often,Maybe,Always,Maybe,Mild
+Female,12,No,Often,Always,Always,Maybe,Often,Often,Always,Mild
+Male,7,No,Often,Always,Often,Often,Often,Often,Always,Mild
+Male,13,No,Often,Maybe,Rarely,Rarely,Always,Maybe,Never Have,Moderate
+Female,14,Yes,Often,Always,Never Have,Maybe,Always,Often,Never Have,Moderate
+Male,13,No,Always,Always,Always,Always,Always,Always,Always,Mild
+Male,14,No,Always,Always,Often,Often,Often,Always,Rarely,Mild
+Male,11,No,Always,Always,Always,Always,Always,Always,Always,Mild
+Female,10,No,Always,Always,Maybe,Never Have,Often,Often,Maybe,Moderate
+Female,10,No,Maybe,Often,Never Have,Rarely,Rarely,Rarely,Never Have,Severe
+Female,11,Yes,Always,Always,Always,Always,Always,Always,Always,Mild
+Female,8,No,Always,Always,Always,Maybe,Always,Always,Always,Mild
+Male,6,No,Often,Often,Always,Maybe,Often,Maybe,Rarely,Moderate
+Male,10,No,Always,Always,Always,Always,Always,Always,Always,Mild
+Male,8,No,Always,Always,Always,Often,Often,Often,Often,Mild
+Female,6,No,Maybe,Maybe,Maybe,Maybe,Maybe,Maybe,Rarely,Moderate
+Male,5,No,Often,Often,Never Have,Rarely,Maybe,Maybe,Rarely,Moderate
+Male,10,No,Often,Often,Maybe,Often,Rarely,Maybe,Maybe,Moderate
+Male,5,No,Always,Always,Maybe,Always,Always,Maybe,Never Have,Mild
+Male,6,No,Always,Always,Always,Often,Often,Maybe,Often,Mild
+Female,9,Yes,Maybe,Often,Maybe,Maybe,Often,Maybe,Rarely,Moderate
+Female,6,Yes,Maybe,Often,Maybe,Rarely,Rarely,Often,Often,Moderate
+Female,10,No,Rarely,Rarely,Rarely,Maybe,Rarely,Rarely,Never Have,Moderate
+Male,9,Yes,Often,Maybe,Never Have,Rarely,Maybe,Rarely,Never Have,Moderate
+Female,13,No,Often,Always,Maybe,Often,Always,Rarely,Often,Mild
+Female,11,No,Maybe,Often,Often,Rarely,Maybe,Often,Rarely,Mild
+Female,10,No,Always,Maybe,Always,Always,Always,Rarely,Often,Mild
+Male,6,No,Never Have,Rarely,Rarely,Rarely,Never Have,Never Have,Never Have,Severe
+Female,14,No,Often,Rarely,Maybe,Rarely,Maybe,Maybe,Rarely,Moderate
+Female,8,Yes,Maybe,Maybe,Maybe,Maybe,Never Have,Maybe,Often,Moderate
+Female,9,No,Maybe,Rarely,Rarely,Never Have,Rarely,Maybe,Often,Moderate
+Female,8,No,Always,Always,Always,Often,Maybe,Always,Always,Mild
+Female,9,Yes,Maybe,Often,Always,Maybe,Often,Often,Always,Mild
+Female,14,Yes,Often,Always,Maybe,Often,Always,Often,Maybe,Mild
+Male,6,No,Maybe,Often,Maybe,Maybe,Rarely,Rarely,Rarely,Moderate
+Female,8,Yes,Never Have,Never Have,Rarely,Never Have,Never Have,Maybe,Never Have,Severe
+Male,14,No,Maybe,Rarely,Often,Maybe,Rarely,Rarely,Never Have,Moderate
+Female,10,No,Rarely,Rarely,Maybe,Maybe,Often,Maybe,Rarely,Moderate
+Male,8,No,Rarely,Rarely,Never Have,Never Have,Never Have,Rarely,Never Have,Severe
+Male,12,Yes,Always,Always,Often,Always,Rarely,Often,Always,Mild
+Female,11,No,Never Have,Maybe,Maybe,Never Have,Maybe,Never Have,Rarely,Severe
+Female,9,No,Often,Always,Often,Often,Maybe,Always,Always,Mild
+Female,14,Yes,Maybe,Often,Maybe,Maybe,Maybe,Maybe,Maybe,Moderate
+Male,11,Yes,Maybe,Often,Rarely,Often,Rarely,Rarely,Maybe,Moderate
+Male,5,Yes,Rarely,Maybe,Rarely,Maybe,Maybe,Maybe,Rarely,Moderate
+Male,8,Yes,Maybe,Often,Rarely,Rarely,Never Have,Often,Never Have,Moderate
+Female,14,Yes,Often,Always,Often,Maybe,Often,Always,Often,Mild
+Male,12,No,Never Have,Never Have,Never Have,Never Have,Never Have,Rarely,Never Have,Severe
+Male,5,Yes,Maybe,Rarely,Never Have,Never Have,Never Have,Never Have,Rarely,Severe
+Female,5,Yes,Never Have,Maybe,Maybe,Maybe,Never Have,Often,Maybe,Moderate
+Male,13,No,Often,Always,Always,Maybe,Always,Maybe,Maybe,Mild
+Male,12,No,Rarely,Maybe,Maybe,Never Have,Maybe,Maybe,Rarely,Moderate
+Female,12,Yes,Never Have,Never Have,Rarely,Maybe,Never Have,Rarely,Never Have,Severe
+Male,8,Yes,Never Have,Rarely,Maybe,Never Have,Never Have,Never Have,Rarely,Severe
+Male,5,Yes,Never Have,Never Have,Never Have,Never Have,Rarely,Maybe,Never Have,Severe
+Male,11,No,Never Have,Never Have,Never Have,Never Have,Never Have,Never Have,Never Have,Severe
+Female,11,Yes,Maybe,Never Have,Often,Often,Maybe,Maybe,Often,Moderate
+Female,13,No,Rarely,Never Have,Never Have,Rarely,Rarely,Rarely,Never Have,Severe
+Male,6,Yes,Rarely,Rarely,Rarely,Maybe,Never Have,Often,Maybe,Moderate
+Female,8,No,Often,Always,Always,Often,Always,Maybe,Rarely,Mild
+Male,6,Yes,Always,Maybe,Always,Always,Often,Maybe,Maybe,Mild
+Male,7,Yes,Often,Often,Always,Always,Always,Often,Maybe,Mild
+Male,14,Yes,Often,Rarely,Rarely,Often,Often,Rarely,Rarely,Moderate
+Male,5,Yes,Maybe,Often,Rarely,Often,Often,Rarely,Maybe,Moderate
+Male,7,No,Rarely,Maybe,Often,Rarely,Rarely,Never Have,Maybe,Moderate
+Male,5,Yes,Never Have,Never Have,Never Have,Never Have,Never Have,Never Have,Maybe,Severe
+Female,10,Yes,Often,Maybe,Often,Maybe,Maybe,Maybe,Rarely,Moderate
+Male,12,No,Often,Maybe,Maybe,Always,Often,Often,Always,Mild
+Female,8,No,Always,Always,Rarely,Maybe,Maybe,Often,Always,Mild
+Male,11,No,Maybe,Maybe,Rarely,Often,Maybe,Maybe,Never Have,Moderate
+Male,10,No,Never Have,Never Have,Never Have,Never Have,Rarely,Never Have,Never Have,Severe
+Male,12,No,Rarely,Maybe,Rarely,Maybe,Never Have,Rarely,Rarely,Moderate
+Female,7,No,Maybe,Never Have,Never Have,Never Have,Never Have,Never Have,Rarely,Severe
+Male,7,Yes,Never Have,Rarely,Rarely,Maybe,Rarely,Maybe,Rarely,Moderate
+Male,5,Yes,Never Have,Rarely,Never Have,Never Have,Rarely,Rarely,Never Have,Severe
+Male,8,Yes,Never Have,Never Have,Maybe,Never Have,Rarely,Never Have,Never Have,Severe
+Female,6,Yes,Never Have,Maybe,Rarely,Never Have,Never Have,Rarely,Rarely,Severe
+Male,9,Yes,Maybe,Maybe,Maybe,Maybe,Rarely,Maybe,Maybe,Moderate
+Female,12,Yes,Maybe,Maybe,Maybe,Maybe,Maybe,Rarely,Maybe,Moderate
+Male,11,Yes,Often,Often,Always,Always,Always,Often,Always,Mild
+Female,6,No,Often,Rarely,Often,Never Have,Rarely,Rarely,Maybe,Moderate
+Male,8,No,Rarely,Never Have,Maybe,Rarely,Never Have,Rarely,Never Have,Severe
+Male,5,No,Always,Often,Often,Always,Maybe,Always,Often,Mild
+Male,9,No,Rarely,Never Have,Never Have,Never Have,Maybe,Never Have,Maybe,Severe
+Male,14,No,Often,Often,Maybe,Often,Never Have,Maybe,Rarely,Moderate
+Female,6,Yes,Never Have,Never Have,Maybe,Rarely,Never Have,Maybe,Never Have,Severe
+Male,14,No,Always,Always,Always,Often,Maybe,Often,Always,Mild
+Female,6,Yes,Often,Never Have,Maybe,Maybe,Never Have,Rarely,Often,Moderate
+Male,11,No,Often,Maybe,Rarely,Rarely,Rarely,Maybe,Never Have,Moderate
+Female,7,No,Maybe,Rarely,Often,Maybe,Rarely,Maybe,Often,Moderate
+Female,9,No,Maybe,Maybe,Maybe,Rarely,Often,Maybe,Maybe,Moderate
+Male,12,No,Often,Always,Maybe,Maybe,Often,Always,Maybe,Mild
+Male,9,Yes,Rarely,Never Have,Rarely,Never Have,Rarely,Never Have,Never Have,Severe
+Female,12,No,Never Have,Never Have,Rarely,Rarely,Rarely,Maybe,Never Have,Severe
+Male,10,No,Often,Maybe,Maybe,Often,Maybe,Rarely,Always,Mild
+Male,10,No,Maybe,Rarely,Often,Maybe,Rarely,Maybe,Maybe,Moderate
+Male,12,Yes,Rarely,Never Have,Never Have,Never Have,Never Have,Never Have,Rarely,Severe
+Male,14,No,Maybe,Always,Maybe,Always,Always,Often,Maybe,Mild
+Female,12,No,Rarely,Rarely,Never Have,Never Have,Rarely,Rarely,Rarely,Severe
+Female,13,Yes,Never Have,Rarely,Never Have,Rarely,Never Have,Rarely,Never Have,Severe
+Female,11,No,Always,Often,Maybe,Often,Always,Often,Maybe,Mild
+Female,14,Yes,Never Have,Rarely,Rarely,Never Have,Maybe,Rarely,Never Have,Severe
+Male,6,Yes,Maybe,Rarely,Rarely,Rarely,Maybe,Often,Maybe,Moderate
+Male,13,Yes,Rarely,Often,Rarely,Maybe,Rarely,Often,Often,Moderate
+Female,5,Yes,Maybe,Rarely,Rarely,Never Have,Often,Often,Never Have,Moderate
+Male,13,Yes,Always,Maybe,Always,Often,Maybe,Often,Always,Mild
+Male,14,No,Always,Maybe,Often,Maybe,Often,Always,Maybe,Mild
+Female,8,Yes,Maybe,Maybe,Never Have,Maybe,Rarely,Often,Rarely,Moderate
+Female,8,Yes,Often,Maybe,Often,Never Have,Rarely,Never Have,Rarely,Moderate
+Female,12,No,Maybe,Often,Always,Always,Always,Often,Always,Mild
+Female,8,Yes,Often,Maybe,Maybe,Maybe,Rarely,Maybe,Maybe,Moderate
+Female,14,Yes,Maybe,Often,Often,Rarely,Maybe,Often,Maybe,Moderate
+Male,10,Yes,Never Have,Never Have,Never Have,Never Have,Maybe,Never Have,Never Have,Severe
+Female,6,No,Rarely,Often,Rarely,Never Have,Rarely,Rarely,Rarely,Moderate
+Male,7,Yes,Maybe,Always,Always,Rarely,Always,Rarely,Maybe,Mild
+Female,9,No,Never Have,Never Have,Rarely,Rarely,Never Have,Never Have,Rarely,Severe
+Female,8,No,Never Have,Maybe,Maybe,Never Have,Often,Often,Rarely,Moderate
+Female,8,No,Often,Rarely,Maybe,Rarely,Maybe,Maybe,Rarely,Moderate
+Female,13,No,Always,Always,Maybe,Always,Rarely,Rarely,Often,Mild
+Female,6,No,Often,Always,Always,Always,Maybe,Rarely,Always,Mild
+Female,13,No,Rarely,Never Have,Maybe,Maybe,Rarely,Often,Maybe,Moderate
+Male,12,No,Always,Always,Maybe,Always,Often,Always,Maybe,Mild
+Male,5,No,Never Have,Never Have,Never Have,Never Have,Never Have,Never Have,Rarely,Severe
+Female,7,Yes,Maybe,Maybe,Never Have,Often,Never Have,Maybe,Maybe,Moderate
+Male,8,No,Never Have,Never Have,Never Have,Never Have,Never Have,Rarely,Never Have,Severe
+Male,13,Yes,Maybe,Rarely,Often,Always,Always,Often,Always,Mild
+Female,10,Yes,Maybe,Rarely,Never Have,Maybe,Often,Maybe,Maybe,Moderate
+Male,5,No,Often,Rarely,Rarely,Rarely,Maybe,Often,Rarely,Moderate
+Male,9,Yes,Never Have,Rarely,Never Have,Rarely,Never Have,Never Have,Never Have,Severe
+Female,7,No,Rarely,Never Have,Maybe,Rarely,Never Have,Rarely,Never Have,Severe
+Female,9,Yes,Never Have,Never Have,Maybe,Rarely,Never Have,Never Have,Never Have,Severe
+Male,11,Yes,Maybe,Often,Maybe,Maybe,Rarely,Never Have,Often,Moderate
+Female,14,No,Rarely,Rarely,Rarely,Rarely,Never Have,Never Have,Maybe,Severe
+Female,10,Yes,Never Have,Never Have,Never Have,Never Have,Never Have,Rarely,Never Have,Severe
+Male,5,No,Maybe,Rarely,Rarely,Maybe,Often,Rarely,Maybe,Moderate
+Female,9,No,Often,Maybe,Often,Always,Always,Always,Often,Mild
+Male,9,No,Always,Maybe,Always,Often,Rarely,Maybe,Often,Mild
+Female,6,No,Often,Always,Always,Always,Often,Always,Always,Mild
+Male,13,No,Always,Always,Always,Always,Rarely,Often,Always,Mild
+Male,10,No,Always,Rarely,Always,Maybe,Often,Always,Maybe,Mild
+Female,8,No,Rarely,Maybe,Often,Rarely,Rarely,Maybe,Maybe,Moderate
+Female,14,No,Rarely,Maybe,Never Have,Maybe,Maybe,Maybe,Maybe,Moderate
+Female,6,No,Rarely,Often,Never Have,Maybe,Rarely,Maybe,Rarely,Moderate
+Male,13,No,Always,Always,Always,Always,Often,Always,Rarely,Mild
+Male,8,Yes,Never Have,Maybe,Never Have,Never Have,Never Have,Never Have,Never Have,Severe
+Male,14,No,Often,Often,Often,Maybe,Always,Always,Often,Mild
+Female,13,Yes,Always,Maybe,Always,Always,Often,Often,Always,Mild
+Male,10,Yes,Never Have,Rarely,Rarely,Never Have,Never Have,Rarely,Never Have,Severe
+Female,9,No,Always,Often,Always,Always,Always,Often,Always,Mild
+Male,10,Yes,Maybe,Often,Rarely,Maybe,Maybe,Rarely,Maybe,Moderate
+Female,14,Yes,Rarely,Rarely,Maybe,Maybe,Rarely,Maybe,Rarely,Moderate
+Female,5,No,Often,Always,Often,Always,Maybe,Often,Always,Mild
+Female,6,No,Maybe,Rarely,Maybe,Rarely,Rarely,Maybe,Maybe,Moderate
+Male,8,Yes,Maybe,Maybe,Maybe,Rarely,Never Have,Never Have,Never Have,Severe
+Female,12,No,Rarely,Often,Maybe,Often,Maybe,Often,Rarely,Moderate
+Male,6,No,Rarely,Never Have,Often,Often,Often,Maybe,Maybe,Moderate
+Male,10,Yes,Often,Maybe,Rarely,Rarely,Maybe,Maybe,Rarely,Moderate
+Male,8,No,Never Have,Often,Rarely,Often,Maybe,Often,Maybe,Moderate
+Female,11,Yes,Always,Maybe,Maybe,Often,Always,Maybe,Often,Mild
+Male,14,No,Rarely,Never Have,Rarely,Never Have,Never Have,Never Have,Never Have,Severe
+Male,11,No,Rarely,Maybe,Often,Rarely,Rarely,Maybe,Maybe,Moderate
+Female,13,Yes,Maybe,Rarely,Maybe,Often,Often,Maybe,Maybe,Moderate
+Male,10,No,Never Have,Never Have,Maybe,Maybe,Never Have,Maybe,Rarely,Severe
+Female,12,No,Maybe,Often,Maybe,Often,Often,Never Have,Never Have,Moderate
+Female,10,Yes,Maybe,Never Have,Never Have,Rarely,Never Have,Maybe,Never Have,Severe
+Female,10,No,Maybe,Maybe,Maybe,Often,Maybe,Rarely,Often,Moderate
+Female,10,No,Often,Always,Often,Rarely,Often,Often,Rarely,Mild
+Female,11,Yes,Rarely,Never Have,Rarely,Never Have,Rarely,Never Have,Never Have,Severe
+Male,7,Yes,Never Have,Never Have,Rarely,Never Have,Rarely,Never Have,Never Have,Severe
+Male,7,No,Always,Always,Maybe,Always,Always,Maybe,Often,Mild
+Male,10,No,Always,Always,Always,Rarely,Rarely,Always,Always,Mild
+Male,13,Yes,Never Have,Rarely,Maybe,Rarely,Rarely,Never Have,Rarely,Severe
+Male,12,Yes,Rarely,Rarely,Never Have,Maybe,Never Have,Never Have,Never Have,Severe
+Female,10,Yes,Never Have,Maybe,Never Have,Rarely,Rarely,Rarely,Never Have,Severe
+Female,5,Yes,Never Have,Never Have,Never Have,Never Have,Never Have,Never Have,Rarely,Severe
+Male,5,No,Never Have,Often,Rarely,Maybe,Maybe,Maybe,Never Have,Moderate
+Male,9,No,Always,Always,Always,Maybe,Always,Maybe,Rarely,Mild
+Female,8,Yes,Rarely,Maybe,Often,Never Have,Maybe,Never Have,Maybe,Moderate
+Male,9,Yes,Maybe,Maybe,Never Have,Rarely,Maybe,Maybe,Rarely,Moderate
+Male,11,Yes,Never Have,Often,Maybe,Rarely,Rarely,Maybe,Rarely,Moderate
+Male,9,No,Never Have,Never Have,Never Have,Never Have,Never Have,Never Have,Never Have,Severe
+Female,7,No,Always,Always,Maybe,Always,Always,Maybe,Rarely,Mild
+Male,11,Yes,Often,Always,Always,Often,Always,Always,Maybe,Mild
+Female,14,Yes,Rarely,Never Have,Never Have,Never Have,Rarely,Maybe,Never Have,Severe
+Female,13,No,Maybe,Always,Often,Often,Maybe,Always,Often,Mild
+Female,13,Yes,Rarely,Often,Maybe,Never Have,Maybe,Maybe,Rarely,Moderate
+Male,12,Yes,Never Have,Never Have,Never Have,Never Have,Never Have,Never Have,Maybe,Severe
+Female,5,No,Often,Rarely,Often,Maybe,Maybe,Never Have,Never Have,Moderate
+Female,12,Yes,Rarely,Never Have,Maybe,Maybe,Often,Never Have,Maybe,Moderate
+Female,14,No,Rarely,Rarely,Rarely,Often,Maybe,Maybe,Maybe,Moderate
+Male,11,Yes,Often,Maybe,Rarely,Rarely,Maybe,Maybe,Never Have,Moderate
+Male,12,No,Never Have,Rarely,Never Have,Never Have,Never Have,Rarely,Never Have,Severe
+Male,9,Yes,Often,Often,Rarely,Rarely,Rarely,Maybe,Never Have,Moderate
+Male,6,Yes,Never Have,Rarely,Rarely,Maybe,Often,Rarely,Rarely,Moderate
+Male,10,Yes,Rarely,Never Have,Rarely,Maybe,Never Have,Never Have,Never Have,Severe
+Female,9,No,Never Have,Maybe,Maybe,Rarely,Rarely,Rarely,Maybe,Moderate
+Female,13,Yes,Maybe,Rarely,Never Have,Never Have,Never Have,Maybe,Never Have,Severe
+Female,5,No,Rarely,Maybe,Maybe,Rarely,Rarely,Rarely,Rarely,Moderate
+Female,6,Yes,Maybe,Always,Rarely,Always,Rarely,Always,Always,Mild
+Female,9,No,Rarely,Rarely,Maybe,Rarely,Rarely,Rarely,Rarely,Moderate
+Male,10,No,Often,Often,Maybe,Often,Maybe,Rarely,Rarely,Moderate
+Male,9,No,Never Have,Never Have,Maybe,Rarely,Maybe,Maybe,Maybe,Moderate
+Female,11,No,Often,Often,Maybe,Rarely,Maybe,Often,Rarely,Moderate
+Male,8,Yes,Maybe,Maybe,Always,Rarely,Always,Often,Often,Mild
+Male,7,No,Rarely,Never Have,Rarely,Rarely,Maybe,Often,Rarely,Moderate
+Male,6,No,Rarely,Rarely,Often,Rarely,Maybe,Maybe,Often,Moderate
+Female,13,Yes,Maybe,Never Have,Often,Often,Often,Rarely,Maybe,Moderate
+Female,11,No,Often,Rarely,Often,Maybe,Often,Maybe,Often,Moderate
+Male,13,No,Maybe,Often,Always,Always,Always,Often,Maybe,Mild
+Male,13,Yes,Rarely,Maybe,Never Have,Rarely,Rarely,Often,Rarely,Moderate
+Female,14,No,Often,Maybe,Rarely,Rarely,Rarely,Maybe,Often,Moderate
+Male,6,No,Always,Always,Always,Maybe,Often,Often,Maybe,Mild
+Male,11,Yes,Maybe,Always,Often,Maybe,Often,Rarely,Always,Mild
+Female,13,No,Rarely,Often,Never Have,Rarely,Maybe,Maybe,Never Have,Moderate
+Female,5,No,Maybe,Maybe,Rarely,Rarely,Never Have,Rarely,Maybe,Moderate
+Male,10,No,Always,Always,Always,Rarely,Always,Maybe,Always,Mild
+Male,12,No,Maybe,Maybe,Rarely,Often,Rarely,Often,Rarely,Moderate
+Male,14,Yes,Rarely,Never Have,Rarely,Rarely,Rarely,Never Have,Never Have,Severe
+Female,5,No,Always,Often,Maybe,Maybe,Maybe,Always,Rarely,Mild
+Male,14,Yes,Often,Rarely,Always,Always,Rarely,Always,Often,Mild
+Female,13,Yes,Rarely,Never Have,Never Have,Never Have,Rarely,Rarely,Never Have,Severe
+Female,10,No,Rarely,Never Have,Never Have,Rarely,Never Have,Never Have,Rarely,Severe
+Male,12,No,Never Have,Maybe,Never Have,Rarely,Never Have,Never Have,Maybe,Severe
+Male,5,Yes,Often,Always,Maybe,Often,Always,Maybe,Often,Mild
+Female,12,Yes,Maybe,Maybe,Maybe,Often,Never Have,Often,Often,Moderate
+Female,6,No,Rarely,Maybe,Rarely,Often,Maybe,Never Have,Often,Moderate
+Female,9,Yes,Often,Maybe,Maybe,Maybe,Maybe,Maybe,Rarely,Moderate
+Male,5,No,Maybe,Rarely,Rarely,Maybe,Often,Never Have,Maybe,Moderate
+Male,9,Yes,Always,Always,Rarely,Often,Maybe,Always,Always,Mild
+Female,5,No,Always,Often,Always,Always,Always,Always,Maybe,Mild
+Male,10,Yes,Rarely,Never Have,Never Have,Rarely,Maybe,Never Have,Maybe,Severe
+Female,12,Yes,Maybe,Rarely,Never Have,Rarely,Rarely,Never Have,Rarely,Severe
+Male,13,No,Maybe,Always,Often,Often,Maybe,Always,Always,Mild
+Male,12,No,Maybe,Maybe,Rarely,Often,Never Have,Maybe,Maybe,Moderate
+Female,13,No,Maybe,Never Have,Rarely,Rarely,Rarely,Often,Maybe,Moderate
+Female,10,No,Never Have,Never Have,Never Have,Maybe,Never Have,Rarely,Never Have,Severe
+Female,7,Yes,Maybe,Never Have,Often,Maybe,Rarely,Maybe,Maybe,Moderate
+Male,8,Yes,Rarely,Maybe,Often,Often,Rarely,Maybe,Often,Moderate
+Female,10,Yes,Maybe,Maybe,Often,Rarely,Maybe,Rarely,Maybe,Moderate
+Female,14,Yes,Maybe,Never Have,Rarely,Maybe,Maybe,Maybe,Maybe,Moderate
+Female,5,No,Always,Always,Often,Rarely,Always,Always,Maybe,Mild
+Male,11,Yes,Never Have,Rarely,Never Have,Never Have,Maybe,Never Have,Never Have,Severe
+Male,10,No,Never Have,Rarely,Never Have,Never Have,Rarely,Never Have,Maybe,Severe
+Female,11,No,Never Have,Never Have,Never Have,Maybe,Never Have,Never Have,Never Have,Severe
+Male,5,No,Maybe,Rarely,Never Have,Never Have,Never Have,Rarely,Never Have,Severe
+Male,9,Yes,Maybe,Rarely,Never Have,Maybe,Maybe,Maybe,Rarely,Moderate
+Male,8,No,Never Have,Rarely,Rarely,Rarely,Never Have,Rarely,Never Have,Severe
+Male,14,Yes,Maybe,Maybe,Never Have,Maybe,Often,Often,Never Have,Moderate
+Female,11,No,Often,Always,Always,Maybe,Often,Often,Often,Mild
+Male,12,No,Rarely,Never Have,Never Have,Never Have,Never Have,Rarely,Never Have,Severe
+Female,5,Yes,Rarely,Never Have,Never Have,Never Have,Never Have,Rarely,Never Have,Severe
+Female,10,Yes,Rarely,Never Have,Never Have,Rarely,Rarely,Never Have,Maybe,Severe
+Female,9,Yes,Never Have,Never Have,Never Have,Never Have,Rarely,Never Have,Never Have,Severe
+Male,13,Yes,Maybe,Rarely,Rarely,Never Have,Never Have,Never Have,Never Have,Severe
+Female,6,Yes,Maybe,Never Have,Maybe,Maybe,Rarely,Maybe,Rarely,Moderate
+Female,13,Yes,Often,Maybe,Always,Often,Always,Always,Often,Mild
+Male,5,No,Maybe,Rarely,Often,Never Have,Maybe,Maybe,Maybe,Moderate
+Male,11,Yes,Rarely,Often,Maybe,Never Have,Maybe,Rarely,Never Have,Moderate
+Male,12,Yes,Never Have,Never Have,Maybe,Never Have,Maybe,Never Have,Never Have,Severe
+Female,10,Yes,Rarely,Rarely,Rarely,Maybe,Rarely,Never Have,Rarely,Moderate
+Male,12,Yes,Never Have,Never Have,Rarely,Never Have,Never Have,Rarely,Rarely,Severe
+Male,12,No,Always,Often,Maybe,Maybe,Rarely,Always,Always,Mild
+Male,5,No,Always,Maybe,Maybe,Maybe,Often,Often,Often,Mild
+Male,7,Yes,Rarely,Rarely,Maybe,Maybe,Rarely,Maybe,Maybe,Moderate
+Female,11,Yes,Never Have,Often,Often,Often,Rarely,Never Have,Maybe,Moderate
+Female,6,Yes,Often,Rarely,Maybe,Rarely,Maybe,Maybe,Rarely,Moderate
+Male,6,Yes,Often,Maybe,Rarely,Maybe,Maybe,Often,Often,Moderate
+Female,12,Yes,Never Have,Never Have,Never Have,Rarely,Never Have,Maybe,Rarely,Severe
+Male,6,Yes,Always,Always,Always,Always,Always,Always,Always,Mild
+Male,5,No,Often,Always,Always,Always,Often,Maybe,Always,Mild
+Male,8,No,Maybe,Maybe,Maybe,Never Have,Rarely,Never Have,Maybe,Moderate
+Female,6,No,Rarely,Maybe,Maybe,Rarely,Never Have,Rarely,Rarely,Moderate
+Female,11,Yes,Rarely,Rarely,Never Have,Rarely,Never Have,Rarely,Rarely,Severe
+Female,7,Yes,Often,Always,Always,Rarely,Often,Often,Maybe,Mild
+Male,6,No,Often,Often,Always,Often,Always,Always,Maybe,Mild
+Male,6,Yes,Rarely,Always,Often,Rarely,Maybe,Always,Maybe,Mild
+Female,10,No,Rarely,Maybe,Maybe,Rarely,Maybe,Rarely,Maybe,Moderate
+Male,7,Yes,Often,Rarely,Rarely,Never Have,Maybe,Maybe,Never Have,Moderate
+Male,11,No,Maybe,Always,Often,Always,Maybe,Often,Maybe,Mild
+Female,9,Yes,Rarely,Rarely,Never Have,Never Have,Never Have,Never Have,Rarely,Severe
+Female,12,Yes,Rarely,Maybe,Often,Often,Maybe,Maybe,Never Have,Moderate
+Female,13,Yes,Never Have,Never Have,Rarely,Never Have,Never Have,Never Have,Rarely,Severe
+Female,7,Yes,Rarely,Maybe,Maybe,Often,Maybe,Maybe,Never Have,Moderate
+Male,5,Yes,Always,Often,Always,Always,Always,Often,Often,Mild
+Male,13,No,Often,Always,Rarely,Always,Often,Maybe,Always,Mild
+Male,6,Yes,Maybe,Maybe,Rarely,Never Have,Never Have,Rarely,Never Have,Severe
+Male,14,No,Always,Rarely,Maybe,Always,Often,Maybe,Maybe,Mild
+Male,11,Yes,Rarely,Never Have,Never Have,Never Have,Never Have,Rarely,Never Have,Severe
+Male,10,Yes,Never Have,Rarely,Never Have,Often,Never Have,Maybe,Maybe,Moderate
+Female,5,No,Rarely,Maybe,Never Have,Never Have,Often,Rarely,Rarely,Moderate
+Female,6,Yes,Maybe,Never Have,Never Have,Maybe,Maybe,Maybe,Maybe,Moderate
+Male,9,Yes,Rarely,Maybe,Maybe,Rarely,Rarely,Never Have,Maybe,Moderate
+Female,9,Yes,Maybe,Often,Always,Always,Maybe,Always,Always,Mild
+Male,8,Yes,Maybe,Rarely,Rarely,Rarely,Never Have,Never Have,Rarely,Moderate
+Female,6,Yes,Maybe,Maybe,Rarely,Maybe,Rarely,Maybe,Maybe,Moderate
+Female,8,No,Often,Always,Always,Maybe,Rarely,Always,Rarely,Mild
+Male,6,No,Rarely,Often,Often,Maybe,Often,Maybe,Rarely,Moderate
+Female,9,No,Rarely,Often,Always,Rarely,Always,Maybe,Maybe,Mild
+Female,8,No,Maybe,Often,Rarely,Rarely,Maybe,Often,Often,Moderate
+Female,5,No,Always,Often,Maybe,Always,Always,Maybe,Often,Mild
+Male,8,Yes,Rarely,Never Have,Never Have,Often,Often,Rarely,Often,Moderate
+Female,9,Yes,Never Have,Maybe,Maybe,Rarely,Often,Maybe,Rarely,Moderate
+Male,5,No,Never Have,Rarely,Never Have,Rarely,Maybe,Rarely,Rarely,Severe
+Female,5,Yes,Never Have,Never Have,Rarely,Never Have,Never Have,Never Have,Never Have,Severe
+Male,14,No,Maybe,Rarely,Never Have,Never Have,Rarely,Never Have,Never Have,Severe
+Male,13,No,Rarely,Often,Rarely,Maybe,Maybe,Always,Always,Mild
+Male,9,Yes,Maybe,Maybe,Often,Often,Maybe,Rarely,Never Have,Moderate
+Female,7,Yes,Rarely,Never Have,Never Have,Never Have,Never Have,Maybe,Rarely,Severe
+Female,12,No,Often,Never Have,Rarely,Rarely,Rarely,Rarely,Maybe,Moderate
+Male,7,Yes,Often,Maybe,Often,Rarely,Maybe,Often,Always,Mild
+Male,10,Yes,Never Have,Maybe,Never Have,Rarely,Never Have,Never Have,Never Have,Severe
+Male,5,No,Rarely,Maybe,Rarely,Often,Maybe,Never Have,Never Have,Moderate
+Male,5,No,Always,Always,Always,Often,Always,Always,Always,Mild
+Female,14,Yes,Often,Maybe,Rarely,Maybe,Maybe,Rarely,Rarely,Moderate
+Male,11,No,Maybe,Often,Maybe,Maybe,Often,Maybe,Rarely,Moderate
+Male,7,No,Often,Often,Maybe,Often,Maybe,Maybe,Maybe,Moderate
+Female,5,No,Maybe,Often,Rarely,Maybe,Maybe,Maybe,Maybe,Moderate
+Male,11,Yes,Never Have,Maybe,Rarely,Rarely,Maybe,Rarely,Maybe,Moderate
+Male,14,Yes,Maybe,Rarely,Maybe,Maybe,Often,Maybe,Often,Moderate
+Male,14,Yes,Maybe,Maybe,Rarely,Maybe,Often,Maybe,Often,Mild
+Male,12,Yes,Often,Always,Often,Maybe,Often,Rarely,Always,Mild
