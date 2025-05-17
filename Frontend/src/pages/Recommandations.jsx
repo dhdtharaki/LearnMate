@@ -176,11 +176,11 @@ export default function Recommendations() {
                                 </span>
                             </h2>
 
-                            <select className="border border-gray-300 p-2 rounded-md">
+                            {/* <select className="border border-gray-300 p-2 rounded-md">
                                 <option>Last 7 Days</option>
                                 <option>Last 30 Days</option>
                                 <option>All Time</option>
-                            </select>
+                            </select> */}
                         </div>
                         <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-green-400 to-green-500 shadow-xl text-white">
                             <span className="text-5xl font-extrabold">

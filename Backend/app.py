@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from model.model_loader import load_model
-from utils.helpers import recommend_activities_for_affective_domain,recommend_activities_for_cognitive_domain,recommend_activities_for_metacognitive_domain,recommend_activities_for_psychomotor_domain
+from utils.helpers import recommend_activities_for_affective_domain,recommend_activities_for_cognitive_domain,recommend_activities_for_metacognitive_domain,recommend_activities_for_psycimoto_domain
 import numpy as np
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash,check_password_hash
@@ -266,10 +266,6 @@ def get_predictions_for_chart():
     return jsonify(results), 200
 
 
-
-
-
-
 @app.route('/affective-predict', methods=['POST'])
 def affectvePredict():
     try:
@@ -327,8 +323,8 @@ def affectvePredict():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
-    
-    
+
+
 @app.route('/cognitive-predict', methods=['POST'])
 def predict_cognitive_level_api():
     try:
@@ -390,7 +386,7 @@ def predict_cognitive_level_api():
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
-#Predict Metacognitive level
+
 @app.route('/meta-cognitive-predict', methods=['POST'])
 def predict_metacognitive_level_api():
     try:
@@ -414,6 +410,7 @@ def predict_metacognitive_level_api():
             data['Family_History'],
             data['Concentration'],
             data['Individual_Tasks_Planning'],
+            # data['response_to_guidance'],
             data['Remember_Steps'],
             data['Finish_Chores_Properly'],
             data['Identify_Goals'],
@@ -451,9 +448,8 @@ def predict_metacognitive_level_api():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
-    
 
-#Predict Psychomotor level
+
 @app.route('/psycomotor-predict', methods=['POST'])
 def psycomotor_level_api():
     try:
@@ -479,6 +475,7 @@ def psycomotor_level_api():
             data['Family_ASD_History'],
             data['Balance_and_Stability'],
             data['Grip_Strength'],
+            # data['response_to_guidance'],
             data['Coordination'],
             data['Hand_Eye_Coordination'],
             data['Object_Manipulation'],
@@ -486,17 +483,17 @@ def psycomotor_level_api():
             data['Button_Zip_Clothes']
         ]
 
-        # Predict cognitive level
-        model = models["model_4"]  # Use the second model
-        predicted_psychomotor_level = model.predict([input_features])[0]
+        # Predict Psychomotor level
+        model = models["model_4"]  # Use the forth model
+        predicted_cognitive_level = model.predict([input_features])[0]
 
-        print(predicted_psychomotor_level)
+        print(predicted_cognitive_level)
 
-        psychomotor_mapping = {0: "Mild", 1: "Moderate", 2: "Severe"}
-        predicted_level = psychomotor_mapping[predicted_psychomotor_level]
+        cognitive_mapping = {0: "Mild", 1: "Moderate", 2: "Severe"}
+        predicted_level = cognitive_mapping[predicted_cognitive_level]
 
         # Get recommendations
-        recommended_activities = recommend_activities_for_psychomotor_domain(predicted_level, data['Age'])
+        recommended_activities = recommend_activities_for_psycimoto_domain(predicted_level, data['Age'])
 
         # Map cognitive level to readable format
         predictions = {
@@ -516,7 +513,7 @@ def psycomotor_level_api():
         })
 
     except Exception as e:
-        return jsonify({"error": str(e)}), 400    
+        return jsonify({"error": str(e)}), 400
 
 
 # Run the app

@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:   
+  frontend:
+    build:
+      context: ./FE
+    container_name: frontend-container
+    restart: always
+    environment:
+      VITE_API_URL: http://localhost:5000
+    ports:
+      - "5173:5173"
+  backend:
+    build:
+      context: ./BE
+    container_name: backend-container
+    restart: always
+    environment:
+      MONGO_URI: "mongodb+srv://learnmate24:XuoLCMtDgd5UPb09@cluster0.rbido.mongodb.net/myDatabase?retryWrites=true&w=majority"
+    ports:
+    - "5000:5000"

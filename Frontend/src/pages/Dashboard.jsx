@@ -113,8 +113,8 @@ export default function Recommendations() {
       const sortedChartData = updatedChartData.sort((a, b) => {
         const dateA = a.date.split('/').reverse().join('-'); 
         const dateB = b.date.split('/').reverse().join('-'); 
-        return new Date(dateA) - new Date(dateB); // 
-      });
+        return new Date(dateA) - new Date(dateB); // 
+      });
 
       setChartData(sortedChartData);
     } catch (error) {

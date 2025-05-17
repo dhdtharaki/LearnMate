@@ -21,6 +21,7 @@ ChartJS.register(
     Legend
 );
 
+
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const LineChart = ({ totalPercentage }) => {
@@ -46,8 +47,8 @@ const LineChart = ({ totalPercentage }) => {
             },
         ],
     };
-    
-   const options = {
+
+    const options = {
         responsive: true,
         plugins: {
             legend: {
