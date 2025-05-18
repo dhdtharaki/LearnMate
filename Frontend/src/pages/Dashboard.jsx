@@ -36,6 +36,9 @@ export default function Recommendations() {
     meta_cognitive_domain: 0,
   });
   const [chartData, setChartData] = useState([]);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  const toggleNavbar = () => setIsCollapsed(!isCollapsed);
 
   const calculatePercentage = (row) => {
     const typicalChild = findActivityByName(row.activity);
@@ -44,8 +47,10 @@ export default function Recommendations() {
       return 0;
     }
 
-    const timeRatio = (typicalChild.timeTake - row.timeTaken) / typicalChild.timeTake;
-    const retryRatio = 1 - ((typicalChild.retries - row.retries) / (typicalChild.retries + 1));
+    const timeRatio =
+      (typicalChild.timeTake - row.timeTaken) / typicalChild.timeTake;
+    const retryRatio =
+      1 - (typicalChild.retries - row.retries) / (typicalChild.retries + 1);
     const pointsRatio = row.points / 10;
     return (((timeRatio + retryRatio + pointsRatio) / 3) * 100).toFixed(2);
   };
@@ -58,28 +63,32 @@ export default function Recommendations() {
 
       return foundActivity
         ? {
-          ...foundActivity,
-          points: Number(foundActivity.points),
-          retries: Number(foundActivity.retries),
-          timeTaken: Number(foundActivity.timeTaken),
-          percentage: calculatePercentage(foundActivity),
-        }
+            ...foundActivity,
+            points: Number(foundActivity.points),
+            retries: Number(foundActivity.retries),
+            timeTaken: Number(foundActivity.timeTaken),
+            percentage: calculatePercentage(foundActivity),
+          }
         : {
-          activity: activityName,
-          date: "",
-          points: 0,
-          retries: 0,
-          timeTaken: 0,
-          email: userObject.email,
-          percentage: 0,
-        };
+            activity: activityName,
+            date: "",
+            points: 0,
+            retries: 0,
+            timeTaken: 0,
+            email: userObject.email,
+            percentage: 0,
+          };
     });
   };
 
   const fetchActivitiesForChart = async () => {
     try {
-      const predictions = await axios.get(`/get_predictions_for_chart?email=${userObject.email}`);
-      const activities = await axios.get(`/get-activities?email=${userObject.email}`);
+      const predictions = await axios.get(
+        `/get_predictions_for_chart?email=${userObject.email}`
+      );
+      const activities = await axios.get(
+        `/get-activities?email=${userObject.email}`
+      );
 
       const uniqueData = predictions.data.reduce((acc, current) => {
         const isDuplicate = acc.some(
@@ -111,10 +120,10 @@ export default function Recommendations() {
       });
 
       const sortedChartData = updatedChartData.sort((a, b) => {
-        const dateA = a.date.split('/').reverse().join('-'); 
-        const dateB = b.date.split('/').reverse().join('-'); 
-        return new Date(dateA) - new Date(dateB); // 
-      });
+        const dateA = a.date.split("/").reverse().join("-");
+        const dateB = b.date.split("/").reverse().join("-");
+        return new Date(dateA) - new Date(dateB); //
+      });
 
       setChartData(sortedChartData);
     } catch (error) {
@@ -125,11 +134,18 @@ export default function Recommendations() {
   const fetchDomainPercentages = async () => {
     try {
       setLoading(true);
-      const predictions = await axios.get(`/get_predictions?email=${userObject.email}`);
-      const activities = await axios.get(`/get-activities?email=${userObject.email}`);
+      const predictions = await axios.get(
+        `/get_predictions?email=${userObject.email}`
+      );
+      const activities = await axios.get(
+        `/get-activities?email=${userObject.email}`
+      );
 
       const calculateDomainPercentage = (activitiesList) => {
-        const total = activitiesList?.reduce((sum, activity) => sum + parseFloat(activity.percentage), 0);
+        const total = activitiesList?.reduce(
+          (sum, activity) => sum + parseFloat(activity.percentage),
+          0
+        );
         return activitiesList?.length ? total / activitiesList?.length : 0;
       };
 
@@ -172,19 +188,22 @@ export default function Recommendations() {
 
   const data = {
     labels: dates,
-    datasets: ["Cognitive Domain", "Affective Domain", "Psycho-Motor Domain", "Meta-Cognitive Domain"].map(
-      (domain, index) => {
-        const domainData = chartData.filter((data) => data.domain === domain);
+    datasets: [
+      "Cognitive Domain",
+      "Affective Domain",
+      "Psycho-Motor Domain",
+      "Meta-Cognitive Domain",
+    ].map((domain, index) => {
+      const domainData = chartData.filter((data) => data.domain === domain);
 
-        return {
-          label: domain,
-          data: domainData.map((data) => data.percentage),
-          borderColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"][index],
-          backgroundColor: "rgba(0, 0, 0, 0)",
-          tension: 0.4,
-        };
-      }
-    ),
+      return {
+        label: domain,
+        data: domainData.map((data) => data.percentage),
+        borderColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"][index],
+        backgroundColor: "rgba(0, 0, 0, 0)",
+        tension: 0.4,
+      };
+    }),
   };
 
   const options = {
@@ -200,31 +219,34 @@ export default function Recommendations() {
   };
 
   return (
-    <div className="min-h-screen flex bg-gradient-to-r from-cyan-500 to-blue-500">
-      <Navbar />
-      <div className="flex-1 flex flex-col">
-        <Header />
-        <main className="flex-1 p-10">
+    <div className="min-h-screen flex bg-blue-100 overflow-hidden">
+      <Navbar
+        isCollapsed={isCollapsed}
+        setIsCollapsed={setIsCollapsed}
+        toggleNavbar={toggleNavbar}
+      />
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <Header isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
+        <main className="flex-1 p-10 overflow-hidden">
           {loading ? (
-            <div className="flex justify-center min-h-screen">
-              Loading...
-            </div>
+            <div className="flex justify-center min-h-screen">Loading...</div>
           ) : (
-            <div className="bg-white rounded-xl shadow-2xl p-6 mb-8">
+            <div className="bg-white rounded-xl shadow-2xl p-6 mb-8 overflow-hidden">
               <h2 className="text-gray-800 font-bold text-xl mb-6">
                 Show Progress for: All Domains
               </h2>
 
-              <div className="grid grid-cols-4 gap-4 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-8">
                 {Object.entries(totalPercentage).map(([domain, percentage]) => (
                   <div
                     key={domain}
-                    className={`flex flex-col items-center justify-center p-4 ${percentage <= 35
+                    className={`flex flex-col items-center justify-center p-4 ${
+                      percentage <= 35
                         ? "bg-red-400"
                         : percentage <= 70
-                          ? "bg-yellow-400"
-                          : "bg-green-400"
-                      } rounded-full text-white font-bold text-lg`}
+                        ? "bg-yellow-400"
+                        : "bg-green-400"
+                    } rounded-full text-white font-bold text-lg`}
                   >
                     <span className="text-2xl">{percentage.toFixed(2)}%</span>
                     <span className="text-sm font-medium mt-1">
@@ -237,7 +259,14 @@ export default function Recommendations() {
               </div>
 
               {chartData.length > 0 && (
-                <Line data={data} options={options} />
+                <div className="w-full overflow-x-auto">
+                  <div className="min-w-[500px] sm:min-w-full h-[300px] sm:h-[500px] sm:mx-auto">
+                    <Line data={data} options={{
+          ...options,
+          maintainAspectRatio: false, // <-- allows the chart to fill the container
+        }}/>
+                  </div>
+                </div>
               )}
             </div>
           )}
@@ -245,5 +274,4 @@ export default function Recommendations() {
       </div>
     </div>
   );
-
 }
