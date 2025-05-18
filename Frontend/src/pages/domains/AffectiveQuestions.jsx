@@ -80,7 +80,7 @@ const AffectiveQuestions = () => {
   };
 
   const handleBackClick = () => {
-    navigate("/dashboard");
+    navigate("/home");
   };
 
   return (

@@ -79,7 +79,7 @@ const CognitiveQuestions = () => {
   };
 
   const handleBackClick = () => {
-    navigate("/dashboard");
+    navigate("/home");
   };
 
   return (

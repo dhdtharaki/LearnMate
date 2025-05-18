@@ -81,7 +81,7 @@ const MetaCognitiveDomain = () => {
   };
 
   const handleBackClick = () => {
-    navigate("/dashboard");
+    navigate("/home");
   };
 
   return (

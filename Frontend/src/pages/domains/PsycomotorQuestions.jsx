@@ -82,7 +82,7 @@ const PsycomotorQuestions = () => {
   };
 
   const handleBackClick = () => {
-    navigate("/dashboard");
+    navigate("/home");
   };
 
   return (
