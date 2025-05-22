@@ -31,6 +31,32 @@ db = mongo.db.users
 db_predictions = mongo.db.predictions
 db_activities = mongo.db.activities
 
+@app.route('/feedback', methods=['POST'])
+def feedback():
+    try:
+        # Get data from the frontend
+        feedback_data = request.json
+
+        # Validate required fields
+        required_fields = ['feedback']
+        for field in required_fields:
+            if field not in feedback_data:
+                return jsonify({"error": f"'{field}' is required."}), 400
+
+        # Create the feedback document
+        feedback = {
+            "feedback": feedback_data['feedback'],
+            "date": datetime.now().strftime("%d/%m/%Y")  # Format: DD/MM/YYYY
+        }
+
+        # Insert the feedback into the database
+        db.insert_one(feedback)
+
+        return jsonify({"message": "Feedback submitted successfully."}), 201
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 @app.route('/register', methods=['POST'])
 def register_user():
     try:
