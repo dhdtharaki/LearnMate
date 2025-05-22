@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { FaHandSpock } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa6";
+import { GiBrain } from "react-icons/gi";
+import { IoIosLeaf } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+import { FeedBackModal } from "../components/FeedbackModal";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
-import { useNavigate } from "react-router-dom";
-import { GiBrain } from "react-icons/gi";
-import { FaHeart } from "react-icons/fa6";
-import { IoIosLeaf } from "react-icons/io";
-import { FaHandSpock } from "react-icons/fa";
-
 export default function Dashboard() {
   const navigate = useNavigate();
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -92,16 +92,24 @@ export default function Dashboard() {
                   >
                     {domain.icon}
                   </div>
-                  <span className={`text-md sm:text-md ${domain.color.baseText}`}>
+                  <span
+                    className={`text-md sm:text-md ${domain.color.baseText}`}
+                  >
                     {domain.name}
                   </span>
-                  <span className="text-xs sm:text-sm text-white font-normal">{domain.desc}</span>
+                  <span className="text-xs sm:text-sm text-white font-normal">
+                    {domain.desc}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
         </main>
+        <footer className="flex justify-center sm:justify-end p-5 sm:p-10">
+            <FeedBackModal />
+        </footer>
       </div>
     </div>
   );
 }
+
