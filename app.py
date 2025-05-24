@@ -6,7 +6,8 @@ from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_cors import CORS  # Import CORS
 from datetime import datetime
-
+from bson import ObjectId
+from bson.errors import InvalidId
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -166,12 +167,17 @@ def update_user():
 
 @app.route('/predictions', methods=['GET'])
 def get_predictions_by_email():
-    email = request.args.get('email')  # Get email from query parameters
+    email = request.args.get('email')
     if not email:
         return jsonify({"error": "Email query parameter is required"}), 400
 
-    # Query MongoDB for predictions with the given email
-    predictions = list(db_predictions.find({"email": email}, {"_id": 0}))  # Exclude `_id` field from results
+    predictions_cursor = db_predictions.find({"email": email})
+    predictions = []
+
+    for prediction in predictions_cursor:
+        prediction['_id'] = str(prediction['_id'])  # Convert ObjectId to string
+        predictions.append(prediction)
+
     if not predictions:
         return jsonify({"message": "No predictions found for the given email"}), 404
 
@@ -184,13 +190,13 @@ def save_activity():
         data = request.json
         
         # Validate required fields
-        required_fields = ["email", "activity", "points", "retries", "timeTaken"]
+        required_fields = ["email", "activity", "points", "retries", "timeTaken", "prediction_id"]	
         for field in required_fields:
             if field not in data:
                 return jsonify({"error": f"'{field}' is required"}), 400
 
         # Prepare the filter and update document
-        filter_query = {"email": data["email"], "activity": data["activity"]}  # Match on email and activity
+        filter_query = {"email": data["email"], "activity": data["activity"], "prediction_id": data.get("prediction_id")}  # Match on email and activity
         update_data = {
             "$set": {
                 "email": data["email"],
@@ -198,6 +204,7 @@ def save_activity():
                 "points": data["points"],
                 "retries": data["retries"],
                 "timeTaken": data["timeTaken"],
+                "prediction_id": data["prediction_id"],
                 "date": datetime.now().strftime("%d/%m/%Y")  # Automatically add the date
             }
         }
@@ -218,6 +225,7 @@ def save_activity():
             "points": data["points"],
             "retries": data["retries"],
             "timeTaken": data["timeTaken"],
+            "prediction_id": data["prediction_id"],
             "date": datetime.now().strftime("%d/%m/%Y")
         }
 
@@ -231,20 +239,29 @@ def save_activity():
 @app.route('/get-activities', methods=['GET'])
 def get_activities_by_email():
     try:
-        # Get email from query parameters
         email = request.args.get('email')
+        prediction_id = request.args.get('prediction_id')
+
+        print(f"Received email: {email}, prediction_id: {prediction_id}")
+
         if not email:
             return jsonify({"error": "Email query parameter is required"}), 400
 
-        # Query the database for all activities with the given email
-        activities = list(db_activities.find({"email": email}))
-        
+        query = {"email": email}
+        if prediction_id:
+            try:
+                query["prediction_id"] = prediction_id
+            except InvalidId:
+                return jsonify({"error": "Invalid prediction_id format"}), 400
+
+        activities = list(db_activities.find(query))
+
         # Convert ObjectId to string for JSON serialization
         for activity in activities:
             activity["_id"] = str(activity["_id"])
 
         # if not activities:
-        #     return jsonify({"message": "No activities found for the given email"}), 404
+        #     return jsonify({"message": "No activities found for the given query"}), 404
 
         return jsonify({"message": "Activities retrieved successfully", "data": activities}), 200
 
