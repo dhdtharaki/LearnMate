@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import Swal from "sweetalert2";
+import axios from "../apis/axiosInstance";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
-import { useLocation } from "react-router-dom";
-import axios from "../apis/axiosInstance";
-import Swal from "sweetalert2";
 import { findActivityByName } from "../static/activities.js";
 
 export default function Recommendations() {
@@ -34,7 +34,7 @@ export default function Recommendations() {
       try {
         setLoading(true);
         const response = await axios.get(
-          `/get-activities?email=${userObject.email}`
+          `/get-activities?email=${userObject.email}&prediction_id=${rowData._id}`
         );
         const activitiesList = rowData.recommendation.map((activityName) => {
           const foundActivity = response.data.data.find(
@@ -145,6 +145,7 @@ export default function Recommendations() {
         const updatedValues = {
           ...formValues,
           email: userObject.email,
+          prediction_id: rowData._id,
         };
 
         await axios.post("/save-activity", updatedValues);
