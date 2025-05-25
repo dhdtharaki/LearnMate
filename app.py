@@ -31,6 +31,7 @@ models = {
 db = mongo.db.users
 db_predictions = mongo.db.predictions
 db_activities = mongo.db.activities
+db_feedback = mongo.db.feedback
 
 @app.route('/feedback', methods=['POST'])
 def feedback():
@@ -51,7 +52,7 @@ def feedback():
         }
 
         # Insert the feedback into the database
-        db.collection('feedback').insert_one(feedback)
+        db_feedback.collection('feedback').insert_one(feedback)
 
         return jsonify({"message": "Feedback submitted successfully."}), 201
 
