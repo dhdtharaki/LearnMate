@@ -52,7 +52,7 @@ def feedback():
         }
 
         # Insert the feedback into the database
-        db_feedback.collection('feedback').insert_one(feedback)
+        db_feedback.insert_one(feedback)
 
         return jsonify({"message": "Feedback submitted successfully."}), 201
 
